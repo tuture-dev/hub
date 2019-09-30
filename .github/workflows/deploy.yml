@@ -3,22 +3,24 @@ on:
   push:
     branches:
       - master
+name: Deploy
 jobs:
-  build-and-deploy:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+    - name: Clean
+      uses: heowc/action-hexo@master
       with:
-        submodules: true
-
-    - name: Install hexo
-      run: npm install -g hexo-cli
-
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
+        args: clean
+    - name: Generate
+      uses: heowc/action-hexo@master
+      with:
+        args: generate
+    - name: Deploy
+      uses: heowc/action-hexo@master
       env:
-        ACCESS_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        BRANCH: gh-pages
-        FOLDER: public
-        BUILD_SCRIPT: npm install && hexo generate
+        EMAIL: 1043269994@qq.com
+        NAME: pftom
+      with:
+        args: deploy
