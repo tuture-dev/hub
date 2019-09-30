@@ -9,6 +9,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
+      with:
+        submodules: true
 
     - name: Install hexo
       run: npm install -g hexo-cli
