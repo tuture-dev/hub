@@ -1,0 +1,22 @@
+name: Tuture Hu Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Install hexo
+      run: npm install -g hexo-cli
+
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        BRANCH: gh-pages
+        FOLDER: public
+        BUILD_SCRIPT: npm install && hexo generate
