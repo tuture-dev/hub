@@ -1,25 +1,27 @@
-name: Tuture Hu Deploy
+name: github pages
+
 on:
   push:
     branches:
-      - master
+    - master
+
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
+  build-deploy:
+    runs-on: ubuntu-18.04
     steps:
-    - name: Clean
-      uses: heowc/action-hexo@master
+    - uses: actions/checkout@master
+
+    - name: build
+      uses: actions/setup-node@v1
       with:
-        args: clean
-    - name: Generate
-      uses: heowc/action-hexo@master
-      with:
-        args: generate
-    - name: Deploy
-      uses: heowc/action-hexo@master
+        node-version: '10.16'
+    - run: |
+        npm install
+        npm run build
+
+    - name: deploy
+      uses: peaceiris/actions-gh-pages@v2.4.0
       env:
-        EMAIL: 1043269994@qq.com
-        NAME: pftom
-      with:
-        args: deploy
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./public
