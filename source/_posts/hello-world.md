@@ -10,9 +10,15 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 ### Create a new post
 
-``` bash
-$ hexo new "My New Post"
+
+<div>hello</div>
+
+``` diff,JavaScript
++ $ hexo new "My New Post"
+- hello
+const a = "hello"
 ```
+
 
 More info: [Writing](https://hexo.io/docs/writing.html)
 
