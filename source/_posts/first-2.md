@@ -4,6 +4,7 @@ date: 2019-09-30 08:49:07
 description: hello world
 tags:
 - TypeScript
+- JavaScript
 categories:
 - FrontEnd
 - Coding2
@@ -24,14 +25,27 @@ Do not just seek happiness for yourself. Seek happiness for all. Through kindnes
 
 {% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %}
 Every interaction is both precious and an opportunity to delight.
+
 {% endblockquote %}
 
-{% codeblock tuture.yml lang:JavaScript https://tuture.co/ 完整代码 %}
-const a = "1";
-{% endcodeblock %}
 
-```JavaScript tuture.yml https://tuture.co 完成代码
-const a = "1";
+```javascript
+console.log('hello')
 ```
+
+```diff app.js 
++const methodOverride = require('method-override');
+const errorHandler = require('errorhandler');
+-const routes = require('./routes');
+-module.exports = function(app) {
+  app.use(morgan('dev'));
+  app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(errorHandler());
+  }
+-  routes(app);
+  return app; 
+}; 
+```
+
 
 <script async src="//jsfiddle.net/pftom/87j3hz0r/3/embed/"></script>

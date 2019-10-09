@@ -9,7 +9,7 @@
     "build": "hexo generate"
   },
   "dependencies": {
-    "hexo": "^3.9.0",
+    "tuture-hexo": "^3.9.1",
     "hexo-deployer-git": "^2.0.0",
     "hexo-generator-archive": "^0.1.5",
     "hexo-generator-category": "^0.1.3",
