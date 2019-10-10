@@ -59,7 +59,7 @@ app.listen(app.get('port'), function() {
 
 通过 `{% raw %}node server.js{% endraw %}` 运行 server.js 文件，然后在浏览器中访问 [http://localhost:3000](http://localhost:3000)，便可以看到服务器的返回的 Hello World：
 
-![](/images/figure-1.png)
+![](./figure-1.png)
 
 ## 配置中间件
 
@@ -256,11 +256,11 @@ The image:create POST controller
 
 首页的效果如下图所示：
 
-![](/images/figure-2.png)
+![](./figure-2.png)
 
 图片详情的效果如下图所示：
 
-![](/images/figure-3.png)
+![](./figure-3.png)
 
 尽管如今前后端分离已经是大势所趋，但是通过模板引擎在服务器端渲染页面也是有用武之地的，特别是快速地开发一些简单的应用。在模板引擎中，[Handlebars](http://handlebarsjs.com/) 和 [Pug](https://pugjs.org/api/getting-started.html) 当属其中的佼佼者。由于 Handlebars 和普通的 HTML 文档几乎完全一致，容易上手，因此这篇教程中我们选用 Handlebars，并且选用 Bootstrap 样式。
 

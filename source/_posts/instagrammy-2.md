@@ -89,7 +89,7 @@ module.exports = {
 
 `{% raw %}req.file{% endraw %}` 是一个 Multer 文件对象，包括 `{% raw %}path{% endraw %}`（上传到服务器的路径）、`{% raw %}filename{% endraw %}`（服务器存储的文件名）和 `{% raw %}originalname{% endraw %}`（文件初始名，即保存在客户端的文件名）等有用的属性。我截取了一张输出 `{% raw %}req.file{% endraw %}` 所有字段的图片如下：
 
-![](/images/figure-4.png)
+![](./figure-4.png)
 
 这里我们通过简单的后缀匹配来判断用户上传的是否为图片，如果是，则从临时目录 `{% raw %}tempPath{% endraw %}` 存放到上传目录 `{% raw %}targetPath{% endraw %}` 中，否则直接删除。上传成功后，通过 `{% raw %}res.redirect{% endraw %}` 将页面重定向到刚刚上传的图片的详情页面。
 
