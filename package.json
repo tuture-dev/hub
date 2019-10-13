@@ -1,6 +1,10 @@
 {
   "name": "hexo-site",
+<<<<<<< HEAD
   "version": "0.0.1",
+=======
+  "version": "0.0.0",
+>>>>>>> new-post
   "hexo": {
     "version": "3.9.0"
   },
