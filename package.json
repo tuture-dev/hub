@@ -1,14 +1,14 @@
 {
   "name": "hexo-site",
   "version": "0.0.1",
-  "tuture-hexo": {
-    "version": "3.9.1"
+  "hexo": {
+    "version": "3.9.0"
   },
   "scripts": {
     "build": "hexo generate"
   },
   "dependencies": {
-    "tuture-hexo": "^3.9.1",
+    "hexo": "^3.9.0",
     "hexo-deployer-git": "^2.0.0",
     "hexo-generator-archive": "^0.1.5",
     "hexo-generator-category": "^0.1.3",
