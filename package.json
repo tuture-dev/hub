@@ -1,7 +1,11 @@
 {
   "name": "hexo-site",
+<<<<<<< Updated upstream
   "version": "0.0.0",
   "private": true,
+=======
+  "version": "0.0.1",
+>>>>>>> Stashed changes
   "hexo": {
     "version": "3.9.0"
   },

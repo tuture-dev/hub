@@ -21,23 +21,24 @@ $ npm install multer
 
 在 server/routes.js 模块中，我们初始化 multer 中间件，然后将其添加到上传图片的路由中（即 `{% raw %}POST /images{% endraw %}`）：
 
-```diff server/routes.js
+```javascript server/routes.js
 const express = require('express');
-+ const multer = require('multer');
-+ const path = require('path');
+tuture-add:const multer = require('multer');
+tuture-add:const path = require('path');
 
 const router = express.Router();
-+ const upload = multer({ dest: path.join(__dirname, 'public/upload/temp') });
+tuture-add:const upload = multer({ dest: path.join(__dirname, 'public/upload/temp') });
 const home = require('../controllers/home');
 const image = require('../controllers/image');
 
 module.exports = function(app) {
   router.get('/', home.index);
   router.get('/images/:image_id', image.index);
--   router.post('/images', image.create);
-+   router.post('/images', upload.single('file'), image.create);
+tuture-del:  router.post('/images', image.create);
+tuture-add:  router.post('/images', upload.single('file'), image.create);
   router.post('/images/:image_id/like', image.like);
   router.post('/images/:image_id/comment', image.comment);
+tuture-omit:
   app.use(router);
 ```
 
@@ -50,7 +51,7 @@ module.exports = function(app) {
 
 在配置好上传文件的中间件后，相应地在控制器中加入获取并保存图片的代码：
 
-```diff controllers/image.js
+```javascript controllers/image.js
 + const fs = require('fs');
 + const path = require('path');
 +
@@ -137,7 +138,7 @@ module.exports = mongoose.model('Image', ImageSchema);
 
 接着我们在 home 控制器中调用 `{% raw %}ImageModel{% endraw %}` 来从数据库中获取全部图片：
 
-```diff controllers/home.js
+```javascript controllers/home.js
 + const ImageModel = require('../models/image');
 +
 module.exports = {
@@ -196,7 +197,7 @@ MongoDB 的查询灵活而强大，但这也意味着一定的学习成本。
 
 进一步，我们在 image 控制器中添加数据库操作的代码：
 
-```diff controllers/image.js
+```javascript controllers/image.js
 const fs = require('fs');
 const path = require('path');
 + const ImageModel = require('../models/image');
@@ -278,7 +279,7 @@ module.exports = {
 
 最后，我们需要在服务器刚刚运行时就连接好数据库，因此在 server.js 中添加如下代码：
 
-```diff server.js
+```javascript server.js
 const express = require('express');
 + const mongoose = require('mongoose');
 const configure = require('./server/configure');
@@ -338,7 +339,7 @@ module.exports = mongoose.model('Comment', CommentSchema);
 
 我们对评论有关的界面代码进行细微的调整，将提交按钮的 `{% raw %}type{% endraw %}` 从 `{% raw %}button{% endraw %}` 改为 `{% raw %}submit{% endraw %}`：
 
-```diff views/image.handlebars
+```javascript views/image.handlebars
           </div>
           <div class="form-group col-sm-12">
             <div class="col-sm-12 text-right">
@@ -351,7 +352,7 @@ module.exports = mongoose.model('Comment', CommentSchema);
 
 最后是评论有关的 controller 代码。包括在 `{% raw %}image.comment{% endraw %}` 中实现创建评论，以及在 `{% raw %}image.index{% endraw %}` 中实现对单张图片所有评论的查询：
 
-```diff controllers/image.js
+```javascript controllers/image.js
 const fs = require('fs');
 const path = require('path');
 + const md5 = require('md5');
@@ -420,7 +421,7 @@ module.exports = {
 
 首先在控制器中添加点赞和删除的代码：
 
-```diff controllers/image.js
+```javascript controllers/image.js
     }
   },
   like: function(req, res) {
@@ -468,7 +469,7 @@ module.exports = {
 
 我们在路由模块 server/routes.js 中添加刚刚写好的 `{% raw %}image.remove{% endraw %}` 控制器：
 
-```diff server/routes.js
+```javascript server/routes.js
   router.post('/images', upload.single('file'), image.create);
   router.post('/images/:image_id/like', image.like);
   router.post('/images/:image_id/comment', image.comment);
@@ -479,7 +480,7 @@ module.exports = {
 
 如果你尝试运行网站，你会发现点击点赞和删除按钮并没有什么用。因此，我们选用 jQuery 来实现前端界面向服务器发起点赞和删除的请求。在布局文件中添加 jQuery 的静态链接，以及相应的 jQuery 代码（如果不熟悉 jQuery 也不必过于纠结，直接复制粘贴就行了）：
 
-```diff views/layouts/main.handlebars
+```javascript views/layouts/main.handlebars
   </div>
 </body>
 
@@ -724,7 +725,7 @@ module.exports = function(viewModel, callback) {
 
 最后将我们炫酷的 sidebar 模块用到 home 和 image 控制器中：
 
-```diff controllers/home.js
+```javascript controllers/home.js
 + const sidebar = require('../helpers/sidebar');
 const ImageModel = require('../models/image');
 
@@ -746,7 +747,7 @@ module.exports = {
 };
 ```
 
-```diff controllers/image.js
+```javascript controllers/image.js
 const fs = require('fs');
 const path = require('path');
 const md5 = require('md5');
