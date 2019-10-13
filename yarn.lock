@@ -195,20 +195,14 @@ binary-extensions@^2.0.0:
   resolved "http://r.cnpmjs.org/binary-extensions/download/binary-extensions-2.0.0.tgz#23c0df14f6a88077f5f986c0d167ec03c3d5537c"
   integrity sha1-I8DfFPaogHf1+YbA0WfsA8PVU3w=
 
-bluebird@^3.2.2, bluebird@^3.4.0, bluebird@^3.5.1, bluebird@^3.5.2, bluebird@^3.5.3:
+bluebird@^3.2.2, bluebird@^3.4.0, bluebird@^3.5.1, bluebird@^3.5.2:
   version "3.5.5"
   resolved "https://registry.npm.taobao.org/bluebird/download/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
   integrity sha1-qNCv1zJR7/u9X+OEp31zADwXpx8=
 
-<<<<<<< Updated upstream
-bluebird@^3.5.0:
-  version "3.7.0"
-  resolved "http://r.cnpmjs.org/bluebird/download/bluebird-3.7.0.tgz#56a6a886e03f6ae577cffedeb524f8f2450293cf"
-=======
 bluebird@^3.5.0, bluebird@^3.5.3:
   version "3.7.0"
   resolved "https://registry.npm.taobao.org/bluebird/download/bluebird-3.7.0.tgz?cache=0&sync_timestamp=1569956599897&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fbluebird%2Fdownload%2Fbluebird-3.7.0.tgz#56a6a886e03f6ae577cffedeb524f8f2450293cf"
->>>>>>> Stashed changes
   integrity sha1-VqaohuA/auV3z/7etST48kUCk88=
 
 boolbase@~1.0.0:
@@ -489,11 +483,7 @@ copy-descriptor@^0.1.0:
 
 core-js@^1.1.1:
   version "1.2.7"
-<<<<<<< Updated upstream
-  resolved "https://registry.npm.taobao.org/core-js/download/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
-=======
   resolved "https://registry.npm.taobao.org/core-js/download/core-js-1.2.7.tgz?cache=0&sync_timestamp=1565612695976&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
->>>>>>> Stashed changes
   integrity sha1-ZSKUwUZR2yj6k70tX/KYOk8IxjY=
 
 core-util-is@~1.0.0:
@@ -1026,7 +1016,6 @@ hexo-front-matter@^0.2.3:
   version "0.2.3"
   resolved "https://registry.npm.taobao.org/hexo-front-matter/download/hexo-front-matter-0.2.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fhexo-front-matter%2Fdownload%2Fhexo-front-matter-0.2.3.tgz#c7ca8ef420ea36bd85e8408a2e8c9bf49efa605e"
   integrity sha1-x8qO9CDqNr2F6ECKLoyb9J76YF4=
-<<<<<<< Updated upstream
   dependencies:
     js-yaml "^3.6.1"
 
@@ -1035,16 +1024,6 @@ hexo-fs@^1.0.0, hexo-fs@^1.0.2:
   resolved "https://registry.npm.taobao.org/hexo-fs/download/hexo-fs-1.0.2.tgz#5eabe344a79ab68e2fa6937cc5d468129308659f"
   integrity sha1-XqvjRKeato4vppN8xdRoEpMIZZ8=
   dependencies:
-=======
-  dependencies:
-    js-yaml "^3.6.1"
-
-hexo-fs@^1.0.0, hexo-fs@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/hexo-fs/download/hexo-fs-1.0.2.tgz#5eabe344a79ab68e2fa6937cc5d468129308659f"
-  integrity sha1-XqvjRKeato4vppN8xdRoEpMIZZ8=
-  dependencies:
->>>>>>> Stashed changes
     bluebird "^3.5.1"
     chokidar "^2.0.4"
     escape-string-regexp "^1.0.5"
@@ -1101,11 +1080,7 @@ hexo-generator-tag@^0.2.0:
 
 hexo-i18n@^0.2.1:
   version "0.2.1"
-<<<<<<< Updated upstream
-  resolved "https://registry.npm.taobao.org/hexo-i18n/download/hexo-i18n-0.2.1.tgz#84f141432bf09d8b558ed878c728164b6d1cd6de"
-=======
   resolved "https://registry.npm.taobao.org/hexo-i18n/download/hexo-i18n-0.2.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fhexo-i18n%2Fdownload%2Fhexo-i18n-0.2.1.tgz#84f141432bf09d8b558ed878c728164b6d1cd6de"
->>>>>>> Stashed changes
   integrity sha1-hPFBQyvwnYtVjth4xygWS20c1t4=
   dependencies:
     sprintf-js "^1.0.2"
@@ -1165,14 +1140,6 @@ hexo-server@^0.3.3:
     opn "^5.3.0"
     serve-static "^1.13.2"
 
-<<<<<<< Updated upstream
-=======
-hexo-symbols-count-time@^0.6.1:
-  version "0.6.2"
-  resolved "https://registry.npm.taobao.org/hexo-symbols-count-time/download/hexo-symbols-count-time-0.6.2.tgz#f09192033996a5607046d77d243efc195d4f8109"
-  integrity sha1-8JGSAzmWpWBwRtd9JD78GV1PgQk=
-
->>>>>>> Stashed changes
 hexo-util@^0.6.2, hexo-util@^0.6.3:
   version "0.6.3"
   resolved "https://registry.npm.taobao.org/hexo-util/download/hexo-util-0.6.3.tgz#16a2ade457bef955af0dfd22a3fe6f0a49a9137c"
@@ -2656,11 +2623,7 @@ vary@~1.1.2:
 
 warehouse@^2.2.0:
   version "2.2.0"
-<<<<<<< Updated upstream
-  resolved "https://registry.npm.taobao.org/warehouse/download/warehouse-2.2.0.tgz?cache=0&sync_timestamp=1569506092648&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwarehouse%2Fdownload%2Fwarehouse-2.2.0.tgz#5d09d64942992be667d8f7c86a09c2b8aea04062"
-=======
   resolved "https://registry.npm.taobao.org/warehouse/download/warehouse-2.2.0.tgz#5d09d64942992be667d8f7c86a09c2b8aea04062"
->>>>>>> Stashed changes
   integrity sha1-XQnWSUKZK+Zn2PfIagnCuK6gQGI=
   dependencies:
     JSONStream "^1.0.7"
