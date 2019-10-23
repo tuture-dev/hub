@@ -4,6 +4,8 @@ on:
   push:
     branches:
     - master
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   build-deploy:
@@ -13,12 +15,16 @@ jobs:
       with:
         submodules: true
 
-    - name: build
+    - name: setup node environment
       uses: actions/setup-node@v1
       with:
         node-version: '10.16'
-    - run: |
+
+    - name: install npm dependencies
+      run: |
+        npm install -g tuture
         npm install
+        npm run buildTutorials
         npm run build
 
     - name: deploy
