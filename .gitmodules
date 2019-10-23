@@ -1,3 +1,9 @@
 [submodule "themes/next"]
 	path = themes/next
 	url = https://github.com/pftom/hexo-next-theme.git
+[submodule "tutorials/Instagrammy"]
+	path = tutorials/Instagrammy
+	url = https://github.com/mRcfps/Instagrammy.git
+[submodule "tutorials/recipes_app"]
+	path = tutorials/recipes_app
+	url = https://github.com/mRcfps/recipes_app.git
