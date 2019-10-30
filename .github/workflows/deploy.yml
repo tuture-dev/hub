@@ -25,6 +25,9 @@ jobs:
         npm install -g tuture
         npm install
         npm run buildTutorials
+        export HEXO_ALGOLIA_INDEXING_KEY=${{ HEXO_ALGOLIA_INDEXING_KEY }}
+        npm run clean
+        npm run algolia
         npm run build
 
     - name: deploy
