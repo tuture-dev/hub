@@ -13,16 +13,16 @@ const postsDir = path.join(root, 'source', '_posts');
 const buildDir = 'tuture-build';
 
 /**
- * Hashing for each filename.
+ * Hashing for each tutorial title.
  */
-function hashFilename(filename, digits = 7) {
+function createHash(title, digits = 7) {
   const hash = crypto.createHash('sha256');
-  hash.update(filename);
-  return `${hash.digest('hex').slice(0, digits)}.md`;
+  hash.update(title);
+  return hash.digest('hex').slice(0, digits);
 }
 
 /**
- * Function for adjusting markdown content.
+ * Function for adjusting markdown content in place.
  */
 function adjustContent(markdownPath) {
   let content = fs.readFileSync(markdownPath).toString();
@@ -43,18 +43,24 @@ function buildTutorial(tuturePath) {
 
   cp.execSync('tuture reload && tuture build --hexo');
 
-  fs.readdirSync(buildDir).forEach(filename => {
-    if (filename.match(/\.md$/)) {
-      adjustContent(path.join(buildDir, filename));
+  const titles = new Set(
+    fs.readdirSync(buildDir).map(fname => fname.replace('.md', '')),
+  );
 
-      fs.moveSync(
-        path.join(buildDir, filename),
-        path.join(postsDir, hashFilename(filename)),
-        { overwrite: true },
-      );
-    }
+  titles.forEach(title => {
+    const assetsPath = path.join(buildDir, title);
+    const mdPath = path.join(buildDir, `${title}.md`);
+
+    adjustContent(mdPath);
+
+    const newTitle = createHash(title);
+    fs.moveSync(mdPath, path.join(postsDir, `${newTitle}.md`), {
+      overwrite: true,
+    });
+    fs.moveSync(assetsPath, path.join(postsDir, newTitle), { overwrite: true });
   });
 
+  console.log(`Finished ${process.cwd()}.`);
   process.chdir(root);
 }
 
