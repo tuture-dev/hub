@@ -33,7 +33,7 @@ jobs:
         npm run algolia
         npm run build
       env:
-        HEXO_ALGOLIA_INDEXING_KEY: ${{ HEXO_ALGOLIA_INDEXING_KEY }}
+        HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
 
     - name: deploy
       uses: peaceiris/actions-gh-pages@v2.4.0
