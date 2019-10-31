@@ -5,7 +5,7 @@
 # Site
 title: Tuture
 subtitle:
-description: Make technologies spread faster.
+description: 加速技术的传播
 keywords:
 author: 图雀社区
 language: zh-CN
@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://hub.tuture.co
+url: https://hub.tuture.co/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -88,3 +88,9 @@ deploy:
     ignore_hidden: false
     ignore_pattern:
         public: .
+
+algolia:
+  applicationID: 73BSUE4RKU
+  apiKey: 0b7cce26a4734cb760080065b3c4a4a1
+  indexName: Tuture
+  chunkSize: 5000
