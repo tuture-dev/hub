@@ -19,16 +19,21 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '10.16'
+    
+    - name: install tuture globally
+      run: |
+        git clone --depth=1 https://github.com/tutureproject/tuture.git
+        cd tuture && npm install && npm run build && npm install -g
 
     - name: install npm dependencies
       run: |
-        npm install -g tuture
         npm install
         npm run buildTutorials
-        export HEXO_ALGOLIA_INDEXING_KEY=${{ HEXO_ALGOLIA_INDEXING_KEY }}
         npm run clean
         npm run algolia
         npm run build
+      env:
+        HEXO_ALGOLIA_INDEXING_KEY: ${{ HEXO_ALGOLIA_INDEXING_KEY }}
 
     - name: deploy
       uses: peaceiris/actions-gh-pages@v2.4.0
