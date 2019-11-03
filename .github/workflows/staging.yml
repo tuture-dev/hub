@@ -1,0 +1,45 @@
+name: Staging
+
+on:
+  push:
+    branches:
+    - master
+  schedule:
+    - cron: '0 0 * * *'  # every day
+
+jobs:
+  staging:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@master
+      with:
+        submodules: true
+
+    - name: Setup node environment
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.16'
+
+    - name: Install tuture globally
+      run: |
+        git clone --depth=1 https://github.com/tuture-dev/tuture.git
+        cd tuture && npm install && npm run build && npm install -g
+
+    - name: Install npm dependencies and build hexo blog
+      run: |
+        npm install
+        npm run buildTutorials
+        npm run clean
+        npm run algolia
+        npm run build
+      env:
+        HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
+
+    - name: Staging
+      run:
+        npm run stage
+      env:
+        STAGING_SECRET_ID: ${{ secrets.STAGING_SECRET_ID }}
+        STAGING_SECRET_KEY: ${{ secrets.STAGING_SECRET_KEY }}
+        STAGING_BUCKET_NAME: ${{ secrets.STAGING_BUCKET_NAME }}
+        STAGING_BUCKET_REGION: ${{ secrets.STAGING_BUCKET_REGION }}
