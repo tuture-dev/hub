@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Tuture
-subtitle:
-description: 加速技术的传播
-keywords:
+title: 图雀社区
+subtitle: 汇集精彩的实战技术教程
+description: 由 <a href="https://github.com/tuture-dev/tuture" target="_blank">Tuture</a> 工具写成，这里汇集了能够让你从头敲到尾并做出可运行项目的技术教程
+keywords: Web前端开发,小程序开发,移动端开发,后端实战教程
 author: 图雀社区
 language: zh-CN
 timezone:
