@@ -9,9 +9,12 @@
     "clean": "hexo clean",
     "buildTutorials": "node buildTutorials.js",
     "build": "hexo generate",
-    "algolia": "hexo algolia"
+    "algolia": "hexo algolia",
+    "stage": "node staging.js"
   },
   "dependencies": {
+    "cos-nodejs-sdk-v5": "^2.5.14",
+    "dotenv": "^8.2.0",
     "fs-extra": "^8.1.0",
     "hexo": "^3.9.0",
     "hexo-algolia": "^1.3.1",
