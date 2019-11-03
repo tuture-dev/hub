@@ -1,31 +1,29 @@
-name: github pages
+name: Deploy (Production)
 
 on:
   push:
     branches:
-    - gh-pages
-  schedule:
-    - cron: '0 0 * * *'
+    - production
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@master
       with:
         submodules: true
 
-    - name: setup node environment
+    - name: Setup node environment
       uses: actions/setup-node@v1
       with:
         node-version: '10.16'
     
-    - name: install tuture globally
+    - name: Install tuture globally
       run: |
-        git clone --depth=1 https://github.com/tutureproject/tuture.git
+        git clone --depth=1 https://github.com/tuture-dev/tuture.git
         cd tuture && npm install && npm run build && npm install -g
 
-    - name: install npm dependencies
+    - name: Install npm dependencies and build hexo blog
       run: |
         npm install
         npm run buildTutorials
@@ -35,9 +33,9 @@ jobs:
       env:
         HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
 
-    - name: deploy
+    - name: Deploy
       uses: peaceiris/actions-gh-pages@v2.4.0
       env:
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: master
+        PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./public
