@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const COS = require('cos-nodejs-sdk-v5');
 
+require('dotenv').config();
+
 const cos = new COS({
   SecretId: process.env.STAGING_SECRET_ID,
   SecretKey: process.env.STAGING_SECRET_KEY,
