@@ -1,0 +1,44 @@
+name: Deploy (Production)
+
+on:
+  push:
+    branches:
+    - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@master
+      with:
+        submodules: true
+
+    - name: Setup node environment
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.16'
+    
+    - name: Install tuture globally
+      run: |
+        git clone --depth=1 https://github.com/tuture-dev/tuture.git
+        cd tuture && npm install && npm run build && npm install -g
+
+    - name: Install npm dependencies and build hexo blog
+      run: |
+        npm install
+        npm run buildTutorials
+        npm run clean
+        npm run algolia
+        npm run build
+      env:
+        HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
+
+    - name: Deploy to production
+      run:
+        node deploy.js
+      env:
+        DEPLOY_ENV: production
+        SECRET_ID: ${{ secrets.SECRET_ID }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        PROD_BUCKET_NAME: ${{ secrets.PROD_BUCKET_NAME }}
+        PROD_BUCKET_REGION: ${{ secrets.PROD_BUCKET_REGION }}
