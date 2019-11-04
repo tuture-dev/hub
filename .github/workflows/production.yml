@@ -1,14 +1,12 @@
-name: Deploy (Staging)
+name: Deploy (Production)
 
 on:
   push:
     branches:
-    - master
-  schedule:
-    - cron: '0 0 * * *'  # every day
+    - production
 
 jobs:
-  staging:
+  deploy:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@master
@@ -19,7 +17,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '10.16'
-
+    
     - name: Install tuture globally
       run: |
         git clone --depth=1 https://github.com/tuture-dev/tuture.git
@@ -35,12 +33,12 @@ jobs:
       env:
         HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
 
-    - name: Staging
+    - name: Deploy to production
       run:
         node deploy.js
       env:
-        DEPLOY_ENV: staging
+        DEPLOY_ENV: production
         SECRET_ID: ${{ secrets.SECRET_ID }}
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        STAGING_BUCKET_NAME: ${{ secrets.STAGING_BUCKET_NAME }}
-        STAGING_BUCKET_REGION: ${{ secrets.STAGING_BUCKET_REGION }}
+        PROD_BUCKET_NAME: ${{ secrets.PROD_BUCKET_NAME }}
+        PROD_BUCKET_REGION: ${{ secrets.PROD_BUCKET_REGION }}
