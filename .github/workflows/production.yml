@@ -13,11 +13,15 @@ jobs:
       with:
         submodules: true
 
+    - name: Update all submodules
+      run: |
+        git submodule foreach git pull origin master
+
     - name: Setup node environment
       uses: actions/setup-node@v1
       with:
         node-version: '10.16'
-    
+
     - name: Install tuture globally
       run: |
         git clone --depth=1 https://github.com/tuture-dev/tuture.git

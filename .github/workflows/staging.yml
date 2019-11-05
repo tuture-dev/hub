@@ -15,6 +15,10 @@ jobs:
       with:
         submodules: true
 
+    - name: Update all submodules
+      run: |
+        git submodule foreach git pull origin master
+
     - name: Setup node environment
       uses: actions/setup-node@v1
       with:
