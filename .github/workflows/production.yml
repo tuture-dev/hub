@@ -20,20 +20,30 @@ jobs:
     - name: Setup node environment
       uses: actions/setup-node@v1
       with:
-        node-version: '10.16'
+        node-version: 12.x
 
     - name: Install tuture globally
       run: |
         git clone --depth=1 https://github.com/tuture-dev/tuture.git
-        cd tuture && npm install && npm run build && npm install -g
+        cd tuture && yarn && yarn build && npm install -g
+    
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-${{ env.cache-name }}-
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
 
     - name: Install npm dependencies and build hexo blog
       run: |
-        npm install
-        npm run buildTutorials
-        npm run clean
-        npm run algolia
-        npm run build
+        yarn
+        yarn buildTutorials
+        yarn clean
+        yarn algolia
+        yarn build
       env:
         HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
 
