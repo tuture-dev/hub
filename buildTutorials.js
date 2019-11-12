@@ -44,7 +44,10 @@ function buildTutorial(tuturePath) {
   cp.execSync('tuture reload && tuture build --hexo');
 
   const titles = new Set(
-    fs.readdirSync(buildDir).map(fname => fname.replace('.md', '')),
+    fs
+      .readdirSync(buildDir)
+      .filter(fname => fname.match(/.md$/))
+      .map(fname => fname.replace('.md', '')),
   );
 
   titles.forEach(title => {
