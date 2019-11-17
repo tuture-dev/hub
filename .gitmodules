@@ -13,3 +13,6 @@
 [submodule "tutorials/vue-online-shop-frontend"]
 	path = tutorials/vue-online-shop-frontend
 	url = https://github.com/pftom/vue-online-shop-frontend.git
+[submodule "tutorials/react-101"]
+	path = tutorials/react-101
+	url = https://github.com/pftom/react101
