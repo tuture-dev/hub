@@ -1,0 +1,60 @@
+name: Deploy (Staging)
+
+on:
+  push:
+    branches:
+    - master
+  schedule:
+    - cron: '0 0 * * *'  # every day
+
+jobs:
+  staging:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@master
+      with:
+        submodules: true
+
+    - name: Update all submodules
+      run: |
+        git submodule foreach git pull origin master
+
+    - name: Setup node environment
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - name: Install tuture globally
+      run: |
+        git clone --depth=1 https://github.com/tuture-dev/tuture.git
+        cd tuture && yarn && yarn build && npm install -g
+    
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-${{ env.cache-name }}-
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
+
+    - name: Install npm dependencies and build hexo blog
+      run: |
+        yarn
+        yarn buildTutorials
+        yarn clean
+        yarn algolia
+        yarn build
+      env:
+        HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
+
+    - name: Staging
+      run:
+        node deploy.js
+      env:
+        DEPLOY_ENV: staging
+        SECRET_ID: ${{ secrets.SECRET_ID }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        STAGING_BUCKET_NAME: ${{ secrets.STAGING_BUCKET_NAME }}
+        STAGING_BUCKET_REGION: ${{ secrets.STAGING_BUCKET_REGION }}

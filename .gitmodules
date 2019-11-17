@@ -7,6 +7,12 @@
 [submodule "tutorials/recipes_app"]
 	path = tutorials/recipes_app
 	url = https://github.com/mRcfps/recipes_app.git
+[submodule "tutorials/vue-online-shop-backend"]
+	path = tutorials/vue-online-shop-backend
+	url = https://github.com/pftom/vue-online-shop-backend
+[submodule "tutorials/vue-online-shop-frontend"]
+	path = tutorials/vue-online-shop-frontend
+	url = https://github.com/pftom/vue-online-shop-frontend.git
 [submodule "tutorials/react-101"]
 	path = tutorials/react-101
 	url = https://github.com/pftom/react101

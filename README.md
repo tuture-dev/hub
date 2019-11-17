@@ -28,29 +28,4 @@ $ npm start
 
 ## 贡献教程
 
-首先，非常感谢你选择分享教程！分享教程非常容易，只需按照以下步骤：
-
-1. Fork 此仓库，并 clone 到本地：
-
-```bash
-$ git clone --recurse-submodules https://github.com/<username>/hub.git
-```
-
-`<username>` 是你的 GitHub 用户名。
-
-2. 将你的教程仓库作为 Git 子模块添加到本项目的 tutorials 目录中：
-
-```bash
-$ git submodule add <repo_git_url> tutorials/<repo_name>
-```
-
-`<repo_git_url>` 是你仓库的 Git URL，`<repo_name>` 则是仓库的名称。
-
-3. 本地运行并查看效果：
-
-```bash
-$ npm run buildTutorials
-$ npm start
-```
-
-4. 推送分支，发起 Pull Request！如果通过我们的评审，这篇教程将被合并进主分支，并部署到 [Tuture Hub](https://tuture.co/hub)。
+首先，非常感谢你选择分享教程！分享教程非常容易，请阅读[分享教程指南](https://docs.tuture.co/guide/sharing.html)。

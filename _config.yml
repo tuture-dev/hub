@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Tuture
-subtitle:
-description: Make technologies spread faster.
-keywords:
+title: 图雀社区
+subtitle: 汇集精彩的实战技术教程
+description: 由 <a href="https://github.com/tuture-dev/tuture" target="_blank">Tuture</a> 工具写成，这里汇集了能够让你从头敲到尾并做出可运行项目的技术教程
+keywords: Web前端开发,小程序开发,移动端开发,后端实战教程
 author: 图雀社区
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://tuture.co
-root: /hub
+url: https://tuture.co/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -88,3 +88,17 @@ deploy:
     ignore_hidden: false
     ignore_pattern:
         public: .
+
+algolia:
+  applicationID: 73BSUE4RKU
+  apiKey: 0b7cce26a4734cb760080065b3c4a4a1
+  indexName: Tuture
+  chunkSize: 5000
+
+# Post wordcount display settings
+# Dependencies: https://github.com/theme-next/hexo-symbols-count-time
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
