@@ -7,3 +7,6 @@
 [submodule "tutorials/recipes_app"]
 	path = tutorials/recipes_app
 	url = https://github.com/mRcfps/recipes_app.git
+[submodule "tutorials/react-101"]
+	path = tutorials/react-101
+	url = https://github.com/pftom/react101
