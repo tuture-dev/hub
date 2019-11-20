@@ -10,6 +10,10 @@ on:
 jobs:
   staging:
     runs-on: ubuntu-18.04
+
+    # Only run this action in tuture-dev/hub
+    if: github.repository == 'tuture-dev/hub'
+
     steps:
     - uses: actions/checkout@master
       with:
@@ -28,9 +32,10 @@ jobs:
       run: |
         git clone --depth=1 https://github.com/tuture-dev/tuture.git
         cd tuture && yarn && yarn build && npm install -g
-    
+
     - name: Cache node modules
       uses: actions/cache@v1
+      if: github.event_name != 'schedule'
       with:
         path: node_modules
         key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
