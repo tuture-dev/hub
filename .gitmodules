@@ -19,3 +19,6 @@
 [submodule "tutorials/react-quickstart-tutorial"]
 	path = tutorials/react-quickstart-tutorial
 	url = https://github.com/pftom/react-quickstart-tutorial
+[submodule "tutorials/django_news"]
+	path = tutorials/django_news
+	url = https://github.com/mRcfps/django_news.git
