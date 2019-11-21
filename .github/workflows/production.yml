@@ -5,7 +5,7 @@ on:
     branches:
     - production
   schedule:
-    - cron: '0 0 * * *'  # every day
+    - cron: '0 * * * *'  # every hour
 
 jobs:
   deploy:
