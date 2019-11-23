@@ -65,7 +65,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-  return HttpResponse('Hello World!')
+  	return HttpResponse('Hello World!')
 ```
 
 再比如，我们看到第四步的内容如下：
@@ -91,14 +91,14 @@ from django.shortcuts import render
 def index(request):
     context = {
           'news_list': [
-              {
-                  "title": "图雀写作工具推出了新的版本",
-                  "content": "随随便便就能写出一篇好教程，真的很神奇",
-              },
-              {
-                  "title": "图雀社区正式推出快速入门系列教程",
-                  "content": "一杯茶的功夫，让你快速上手，绝无担忧",
-              },
+                {
+                    "title": "图雀写作工具推出了新的版本",
+                    "content": "随随便便就能写出一篇好教程，真的很神奇",
+                },
+                {
+                    "title": "图雀社区正式推出快速入门系列教程",
+                    "content": "一杯茶的功夫，让你快速上手，绝无担忧",
+                },
           ]
      }
 
@@ -112,3 +112,28 @@ def index(request):
 每篇教程都会有明确的步骤，每一个步骤的致力于讲解一个完整的知识点，并且会运用这一步骤学到的知识点完成这个完整项目的一部分，并且每个步骤的代码都会依赖于上一个步骤的代码，最终所有的步骤会串成一个整体，当关于技术的知识点讲完之后，你也完成了一个完整的项目。
 
 通过这样的方式，你不仅知道这门技术的概念是什么，还能知道这些概念如何组合在一起并为一个实际的项目服务，这就是图雀社区希望每篇教程能够达到的效果：既知树木，也见森林。
+
+## 常用工具推荐
+
+这里推荐一些常用的开发工具和网站，可以改进开发体验，增加开发效率。
+
+### VSCode 代码编辑器
+
+下载链接：https://code.visualstudio.com/
+
+使用：https://segmentfault.com/a/1190000017949680
+
+### Git 版本控制
+
+下载链接：https://git-scm.com/
+
+使用：https://www.liaoxuefeng.com/wiki/896043488029600
+
+### Github
+
+网址：https://github.com/
+
+Github Pull Request 工作流：https://www.jianshu.com/p/ac33f0295629
+
+
+
