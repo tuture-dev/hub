@@ -33,6 +33,11 @@ jobs:
         git clone --depth=1 https://github.com/tuture-dev/tuture.git
         cd tuture && yarn && yarn build && npm install -g
 
+    - name: Install imagemagick
+      run: |
+        sudo apt update
+        sudo apt install imagemagick
+
     - name: Cache node modules
       uses: actions/cache@v1
       if: github.event_name != 'schedule'
