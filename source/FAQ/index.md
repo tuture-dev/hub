@@ -24,7 +24,7 @@ date: 2019-11-23 10:38:31
 
 #### 关于评论
 
-当你翻到每篇教程的底部，你会发现我们还为每篇教程提供了评论入口，我们的评论使用了 Gitalk，即将 Github 仓库的 Issue(提问题) 的板块作为了教程的评论后台，所以如果你有评论的需求，你需要首先注册 Github 账号。
+当你翻到每篇教程的底部，你会发现我们还为每篇教程提供了评论入口，我们的评论使用了 [Gitalk](https://github.com/gitalk/gitalk)，即将 Github 仓库的 Issue(提问题) 的板块作为了教程的评论后台，所以如果你有评论的需求，你需要首先注册 Github 账号。
 
 ![image-20191123160237465](/images/image-20191123160237465.png)
 
@@ -80,7 +80,7 @@ def index(request):
 from django.http import HttpResponse
 
 def index(request):
-  return HttpResponse('Hello World!')
+  	return HttpResponse('Hello World!')
 ```
 
 经过修改，到第四步，`news/views.py` 的代码是这样的：
