@@ -34,10 +34,25 @@ jobs:
         git clone --depth=1 https://github.com/tuture-dev/tuture.git
         cd tuture && yarn && yarn build && npm install -g
 
+    - name: Cache imagemagick
+      uses: actions/cache@v1
+      id: imCache
+      if: github.event_name != 'schedule'
+      with:
+        path: ImageMagick-7.*
+        key: ${{ runner.OS }}-imagemagick
+        restore_keys: ${{ runner.OS }}-imagemagick
+
     - name: Install imagemagick
+      if: steps.imCache.outputs.cache-hit != 'true'
       run: |
-        sudo apt update
-        sudo apt install imagemagick
+        wget http://www.imagemagick.org/download/ImageMagick.tar.gz
+        tar -xvf ImageMagick.tar.gz
+        cd ImageMagick-7.*
+        ./configure
+        make -j8
+        sudo make install
+        sudo ldconfig /usr/local/lib
 
     - name: Cache node modules
       uses: actions/cache@v1
