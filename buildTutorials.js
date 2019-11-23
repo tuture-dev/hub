@@ -22,10 +22,36 @@ function createHash(title, digits = 7) {
 }
 
 /**
+ * Compress all images (except for GIFs).
+ */
+function compressImages(assetsRoot, content) {
+  let newContent = content;
+  fs.readdirSync(assetsRoot).forEach(imgName => {
+    const oldPath = path.join(assetsRoot, imgName);
+    const { dir, name, ext } = path.parse(oldPath);
+
+    if (ext !== '.gif') {
+      const newPath = path.join(dir, `${name}.jpg`);
+
+      // Compress images into degraded JPEG format and remove old ones.
+      cp.execSync(`magick convert -quality 20% ${oldPath} ${newPath} && rm ${oldPath}`);
+
+      // Update image paths in markdown.
+      newContent = newContent.replace(new RegExp(imgName, 'g'), `${name}.jpg`);
+    }
+  });
+
+  return newContent;
+}
+
+/**
  * Function for adjusting markdown content in place.
  */
-function adjustContent(markdownPath) {
+function adjustContent(assetsPath, markdownPath) {
   let content = fs.readFileSync(markdownPath).toString();
+
+  // Perform image compression.
+  content = compressImages(assetsPath, content);
 
   // Set the lang of all vue code blocks to html,
   // since highlight.js doesn't support vue syntax.
@@ -41,6 +67,13 @@ function buildTutorial(tuturePath) {
   process.chdir(tuturePath);
   console.log(`Working on ${process.cwd()}.`);
 
+  if (!fs.existsSync('tuture.yml')) {
+    console.log('Not in a Tuture tutorial, skipping.');
+    process.chdir(root);
+    return;
+  }
+
+  // Build tutorial as usual.
   cp.execSync('tuture reload && tuture build --hexo');
 
   const titles = new Set(
@@ -54,7 +87,7 @@ function buildTutorial(tuturePath) {
     const assetsPath = path.join(buildDir, title);
     const mdPath = path.join(buildDir, `${title}.md`);
 
-    adjustContent(mdPath);
+    adjustContent(assetsPath, mdPath);
 
     const newTitle = createHash(title);
     fs.moveSync(mdPath, path.join(postsDir, `${newTitle}.md`), {
