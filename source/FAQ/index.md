@@ -65,7 +65,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-  return HttpResponse('Hello World!')
+    return HttpResponse('Hello World!')
 ```
 
 再比如，我们看到第四步的内容如下：
@@ -80,7 +80,7 @@ def index(request):
 from django.http import HttpResponse
 
 def index(request):
-  	return HttpResponse('Hello World!')
+    return HttpResponse('Hello World!')
 ```
 
 经过修改，到第四步，`news/views.py` 的代码是这样的：
