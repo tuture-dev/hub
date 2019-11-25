@@ -34,7 +34,12 @@ function compressImages(assetsRoot, content) {
       const newPath = path.join(dir, `${name}.jpg`);
 
       // Compress images into degraded JPEG format and remove old ones.
-      cp.execSync(`magick convert -quality 20% "${oldPath}" "${newPath}" && rm "${oldPath}"`);
+      cp.execSync(`magick convert -quality 20% "${oldPath}" "${newPath}"`);
+
+      // Remove useless images.
+      if (oldPath !== newPath) {
+        cp.execSync(`rm "${oldPath}"`);
+      }
 
       // Update image paths in markdown.
       newContent = newContent.replace(new RegExp(imgName, 'g'), `${name}.jpg`);
