@@ -24,9 +24,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -m "Automatic commit from update-submodules action ($JOB_CONTAINER_ID)" -a
-      env:
-        JOB_CONTAINER_ID: ${{ job.container.id }}
+        git commit -m "Automatic commit from update-submodules action (`date`)" -a
 
     - name: Push changes
       uses: ad-m/github-push-action@master
