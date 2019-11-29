@@ -22,6 +22,6 @@
 [submodule "tutorials/django_news"]
 	path = tutorials/django_news
 	url = https://github.com/mRcfps/django_news.git
-[submodule "tutorias/express_resume"]
-	path = tutorias/express_resume
+[submodule "tutorials/express_resume"]
+	path = tutorials/express_resume
 	url = https://github.com/mRcfps/express_resume.git
