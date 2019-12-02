@@ -25,3 +25,6 @@
 [submodule "tutorials/express_resume"]
 	path = tutorials/express_resume
 	url = https://github.com/mRcfps/express_resume.git
+[submodule "tutorials/redux-quickstart-tutorial"]
+	path = tutorials/redux-quickstart-tutorial
+	url = https://github.com/pftom/redux-quickstart-tutorial
