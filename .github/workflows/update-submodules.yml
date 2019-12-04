@@ -12,7 +12,7 @@ jobs:
     if: github.repository == 'tuture-dev/hub'
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v1
       with:
         submodules: true
 
@@ -24,7 +24,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -m "Automatic commit from update-submodules action (`date`)" -a
+        git diff-index --quiet HEAD || git commit -m "Automatic commit from update-submodules action (`date`)" -a
 
     - name: Push changes
       uses: ad-m/github-push-action@master
