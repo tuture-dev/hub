@@ -28,3 +28,6 @@
 [submodule "tutorials/redux-quickstart-tutorial"]
 	path = tutorials/redux-quickstart-tutorial
 	url = https://github.com/pftom/redux-quickstart-tutorial
+[submodule "tutorials/nodejs-quickstart"]
+	path = tutorials/nodejs-quickstart
+	url = https://github.com/mRcfps/nodejs-quickstart.git
