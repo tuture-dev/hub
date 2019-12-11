@@ -33,7 +33,7 @@ function buildRoadmap(roadmapPath) {
   fs.writeFileSync(path.join(targetDir, 'index.md'), content);
 
   // Move assets directory.
-  fs.moveSync('assets', path.join(targetDir, 'assets'));
+  fs.copySync('assets', path.join(targetDir, 'assets'));
 }
 
 module.exports = buildRoadmap;
