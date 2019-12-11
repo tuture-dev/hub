@@ -1,6 +1,17 @@
+# Theme.
 [submodule "themes/next"]
 	path = themes/next
 	url = https://github.com/pftom/hexo-next-theme.git
+
+# Roadmaps.
+[submodule "roadmaps/node"]
+	path = roadmaps/node
+	url = https://github.com/tuture-dev/nodejs-roadmap.git
+[submodule "roadmaps/react"]
+	path = roadmaps/react
+	url = https://github.com/tuture-dev/react-roadmap.git
+
+# Tutorials.
 [submodule "tutorials/Instagrammy"]
 	path = tutorials/Instagrammy
 	url = https://github.com/mRcfps/Instagrammy.git
