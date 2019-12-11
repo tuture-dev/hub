@@ -67,7 +67,8 @@ jobs:
     - name: Install npm dependencies and build hexo blog
       run: |
         yarn
-        yarn buildTutorials
+        yarn build:roadmaps
+        yarn build:tutorials
         yarn clean
         yarn algolia
         yarn build
