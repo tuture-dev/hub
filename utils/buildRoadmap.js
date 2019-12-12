@@ -24,6 +24,9 @@ function buildRoadmap(roadmapPath) {
   // Remove markdown TOC.
   content = content.replace(/## 目录[\w\W]+## 入门/, '## 入门');
 
+  // Remove original h1.
+  content = content.replace(/<h1>[\w\W]+?<\/h1>/, '');
+
   // Append front matter.
   content = `${frontmatter}\n${content}`;
 
