@@ -56,7 +56,7 @@ comments: false
 {% img roadmaps-logo /images/logos/React.svg 200 200 "React" %}
 
 
-{% cq %}React 是一个用于构建用户界面的 JavaScript 库，具有优秀的性能，并且它的声明式、组件化特性让编写代码变得简单。这条学习路径将带你熟悉前端开发的基础知识，然后深入学习 React、React Router 及 Redux 等关键组件，熟悉 ESLint、webpack 等常用工具，最后还会涉及小程序开发、跨平台移动端开发、服务器端渲染等热门话题，最终成为一名优秀的 React 前端工程师。{% endcq %}
+{% cq %}React 是一个用于构建用户界面的 JavaScript 库，具有优秀的性能，并且它的声明式、组件化特性让编写代码变得简单。这条学习路径将带你熟悉前端开发的基础知识，然后深入学习 React、React Router 及 Redux 等关键组件，熟悉 ESLint、Webpack 等常用工具，最后还会涉及小程序开发、跨平台移动端开发、服务器端渲染等热门话题，最终成为一名优秀的 React 前端工程师。{% endcq %}
 
 
 <div class="roadmaps-center"> {% btn /roadmaps/react, 进入路线, arrow-right fa-fw fa-lg, 进入路线 %}</div>
