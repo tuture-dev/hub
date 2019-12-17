@@ -2,12 +2,16 @@ const fs = require('fs-extra');
 const path = require('path');
 const crypto = require('crypto');
 const cp = require('child_process');
+const yaml = require('js-yaml');
 
 // Root path of this project.
 const root = process.cwd();
 
 // Path to hexo posts.
 const postsDir = path.join(root, 'source', '_posts');
+
+// Path to tutorial covers.
+const coversDir = path.join(root, 'source', 'images', 'covers');
 
 // Sub-directory for storing markdowns of each tutorial.
 const buildDir = 'tuture-build';
@@ -34,7 +38,7 @@ function compressImages(assetsRoot, content) {
       const newPath = path.join(dir, `${name}.jpg`);
 
       // Compress images into degraded JPEG format and remove old ones.
-      cp.execSync(`magick convert -quality 20% "${oldPath}" "${newPath}"`);
+      cp.execSync(`magick convert -quality 30% "${oldPath}" "${newPath}"`);
 
       // Remove useless images.
       if (oldPath !== newPath) {
@@ -52,8 +56,21 @@ function compressImages(assetsRoot, content) {
 /**
  * Function for adjusting markdown content in place.
  */
-function adjustContent(assetsPath, markdownPath) {
+function adjustContent(markdownPath, info) {
+  const { assetsPath, coversPath, hash } = info;
+
   let content = fs.readFileSync(markdownPath).toString();
+
+  // Move the cover(s) and compress.
+  coversPath.forEach(cover => {
+    if (content.match(cover)) {
+      const newCoverName = `${hash}.jpg`;
+      const targetCover = path.join(coversDir, newCoverName);
+      cp.execSync(`magick convert -quality 70% "${cover}" "${targetCover}"`);
+
+      content = content.replace(cover, `/images/covers/${newCoverName}`);
+    }
+  });
 
   // Perform image compression.
   content = compressImages(assetsPath, content);
@@ -88,17 +105,22 @@ function buildTutorial(tuturePath) {
       .map(fname => fname.replace('.md', '')),
   );
 
+  const tuture = yaml.safeLoad(fs.readFileSync('tuture.yml').toString());
+  const coversPath = [tuture.cover]
+    .concat(tuture.splits ? tuture.splits.map(split => split.cover) : [])
+    .filter(cover => cover);
+
   titles.forEach(title => {
+    const hash = createHash(title);
     const assetsPath = path.join(buildDir, title);
     const mdPath = path.join(buildDir, `${title}.md`);
 
-    adjustContent(assetsPath, mdPath);
+    adjustContent(mdPath, { assetsPath, coversPath, hash });
 
-    const newTitle = createHash(title);
-    fs.moveSync(mdPath, path.join(postsDir, `${newTitle}.md`), {
+    fs.moveSync(mdPath, path.join(postsDir, `${hash}.md`), {
       overwrite: true,
     });
-    fs.moveSync(assetsPath, path.join(postsDir, newTitle), { overwrite: true });
+    fs.moveSync(assetsPath, path.join(postsDir, hash), { overwrite: true });
   });
 
   console.log(`Finished ${process.cwd()}.`);
