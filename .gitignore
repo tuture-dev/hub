@@ -9,5 +9,6 @@ public/
 .env
 
 source/_posts
+source/images/covers
 source/roadmaps
 !source/roadmaps/index.md
