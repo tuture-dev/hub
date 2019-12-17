@@ -17,15 +17,6 @@ const coversDir = path.join(root, 'source', 'images', 'covers');
 const buildDir = 'tuture-build';
 
 /**
- * Hashing for each tutorial title.
- */
-function createHash(title, digits = 7) {
-  const hash = crypto.createHash('sha256');
-  hash.update(title);
-  return hash.digest('hex').slice(0, digits);
-}
-
-/**
  * Compress all images (except for GIFs).
  */
 function compressImages(assetsRoot, content) {
@@ -57,20 +48,18 @@ function compressImages(assetsRoot, content) {
  * Function for adjusting markdown content in place.
  */
 function adjustContent(markdownPath, info) {
-  const { assetsPath, coversPath, hash } = info;
+  const { assetsPath, cover, id } = info;
 
   let content = fs.readFileSync(markdownPath).toString();
 
-  // Move the cover(s) and compress.
-  coversPath.forEach(cover => {
-    if (content.match(cover)) {
-      const newCoverName = `${hash}.jpg`;
-      const targetCover = path.join(coversDir, newCoverName);
-      cp.execSync(`magick convert -quality 70% "${cover}" "${targetCover}"`);
+  // Move the cover and compress.
+  if (cover && content.match(cover)) {
+    const newCoverName = `${id}.jpg`;
+    const targetCover = path.join(coversDir, newCoverName);
+    cp.execSync(`magick convert -quality 70% "${cover}" "${targetCover}"`);
 
-      content = content.replace(cover, `/images/covers/${newCoverName}`);
-    }
-  });
+    content = content.replace(cover, `/images/covers/${newCoverName}`);
+  }
 
   // Perform image compression.
   content = compressImages(assetsPath, content);
@@ -80,6 +69,21 @@ function adjustContent(markdownPath, info) {
   content = content.replace(/```vue/g, '```html');
 
   fs.writeFileSync(markdownPath, content);
+}
+
+/**
+ * Build a single hexo post.
+ */
+function buildSinglePost(name, id, cover) {
+  const assetsPath = path.join(buildDir, name);
+  const mdPath = path.join(buildDir, `${name}.md`);
+
+  adjustContent(mdPath, { assetsPath, cover, id });
+
+  fs.moveSync(mdPath, path.join(postsDir, `${id}.md`), {
+    overwrite: true,
+  });
+  fs.moveSync(assetsPath, path.join(postsDir, id), { overwrite: true });
 }
 
 /**
@@ -98,30 +102,15 @@ function buildTutorial(tuturePath) {
   // Build tutorial as usual.
   cp.execSync('tuture reload && tuture build --hexo');
 
-  const titles = new Set(
-    fs
-      .readdirSync(buildDir)
-      .filter(fname => fname.match(/.md$/))
-      .map(fname => fname.replace('.md', '')),
-  );
-
   const tuture = yaml.safeLoad(fs.readFileSync('tuture.yml').toString());
-  const coversPath = [tuture.cover]
-    .concat(tuture.splits ? tuture.splits.map(split => split.cover) : [])
-    .filter(cover => cover);
 
-  titles.forEach(title => {
-    const hash = createHash(title);
-    const assetsPath = path.join(buildDir, title);
-    const mdPath = path.join(buildDir, `${title}.md`);
-
-    adjustContent(mdPath, { assetsPath, coversPath, hash });
-
-    fs.moveSync(mdPath, path.join(postsDir, `${hash}.md`), {
-      overwrite: true,
-    });
-    fs.moveSync(assetsPath, path.join(postsDir, hash), { overwrite: true });
-  });
+  if (tuture.splits) {
+    tuture.splits.forEach(split =>
+      buildSinglePost(split.name, split.id.toString(), split.cover),
+    );
+  } else {
+    buildSinglePost(tuture.name, tuture.id.toString(), tuture.cover);
+  }
 
   console.log(`Finished ${process.cwd()}.`);
   process.chdir(root);
