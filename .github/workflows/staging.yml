@@ -17,11 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Update all submodules
-      run: |
-        git submodule foreach git fetch --all
-        git submodule foreach git reset --hard origin/master
-
     - name: Setup node environment
       uses: actions/setup-node@v1
       with:
@@ -51,6 +46,10 @@ jobs:
     - name: Install npm dependencies
       run: |
         yarn
+    
+    - name: Download repositories
+      run: |
+        yarn download
 
     - name: Build entire site
       run: |

@@ -17,21 +17,12 @@ jobs:
     steps:
     - name: Configuring git identity
       run: |
-        git config --global user.email "mrc@tuture.co"
+        git config --global user.email "mrc@mail.tuture.co"
         git config --global user.name mRcfps
 
     - uses: actions/checkout@v1
       with:
         ref: production
-
-    - name: Update all submodules
-      run: |
-        git submodule foreach git fetch --all
-        git submodule foreach git reset --hard origin/master
-    
-    - name: Checkout production branch of next theme
-      run: |
-        cd themes/next && git checkout production
 
     - name: Setup node environment
       uses: actions/setup-node@v1
@@ -62,6 +53,10 @@ jobs:
     - name: Install npm dependencies
       run: |
         yarn
+    
+    - name: Download repositories
+      run: |
+        yarn download
   
     - name: Build entire site
       run: |

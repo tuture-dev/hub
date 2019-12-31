@@ -8,6 +8,7 @@
   "scripts": {
     "start": "hexo server",
     "clean": "hexo clean",
+    "download": "node script/downloadRepos.js",
     "build:roadmaps": "node script/buildRoadmaps.js",
     "build:tutorials": "node script/buildTutorials.js",
     "build": "hexo generate",
