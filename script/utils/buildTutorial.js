@@ -11,6 +11,9 @@ const postsDir = path.join(root, 'source', '_posts');
 
 // Path to tutorial covers.
 const coversDir = path.join(root, 'source', 'images', 'covers');
+if (!fs.existsSync(coversDir)) {
+  fs.mkdirpSync(coversDir);
+}
 
 // Sub-directory for storing markdowns of each tutorial.
 const buildDir = 'tuture-build';
