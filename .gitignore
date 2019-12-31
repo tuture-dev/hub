@@ -10,7 +10,7 @@ public/
 
 source/_posts
 source/images/covers
-source/roadmaps
+source/roadmaps/*
 !source/roadmaps/index.md
 
 repos
