@@ -1,0 +1,49 @@
+{
+  "root": "repos/tutorials",
+  "sources": [
+    {
+      "name": "Instagrammy",
+      "git": "https://github.com/mRcfps/Instagrammy.git"
+    },
+    {
+      "name": "recipes_app",
+      "git": "https://github.com/mRcfps/recipes_app.git"
+    },
+    {
+      "name": "vue-online-shop-backend",
+      "git": "https://github.com/pftom/vue-online-shop-backend"
+    },
+    {
+      "name": "vue-online-shop-frontend",
+      "git": "https://github.com/pftom/vue-online-shop-frontend.git"
+    },
+    {
+      "name": "react-101",
+      "git": "https://github.com/pftom/react101.git"
+    },
+    {
+      "name": "react-quickstart-tutorial",
+      "git": "https://github.com/pftom/react-quickstart-tutorial"
+    },
+    {
+      "name": "django_news",
+      "git": "https://github.com/mRcfps/django_news.git"
+    },
+    {
+      "name": "express_resume",
+      "git": "https://github.com/mRcfps/express_resume.git"
+    },
+    {
+      "name": "redux-quickstart-tutorial",
+      "git": "https://github.com/pftom/redux-quickstart-tutorial.git"
+    },
+    {
+      "name": "nodejs-quickstart",
+      "git": "https://github.com/mRcfps/nodejs-quickstart.git"
+    },
+    {
+      "name": "ultra-club",
+      "git": "https://github.com/tuture-dev/ultra-club.git"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+name: Deploy (Production)
+
+on:
+  push:
+    branches:
+    - production
+  schedule:
+    - cron: '0 20 * * *'  # 北京时间早上 4:00 部署
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+
+    # Only run this action in tuture-dev/hub
+    if: github.repository == 'tuture-dev/hub'
+
+    steps:
+    - name: Configuring git identity
+      run: |
+        git config --global user.email "mrc@tuture.co"
+        git config --global user.name mRcfps
+
+    - uses: actions/checkout@v1
+      with:
+        ref: production
+
+    - name: Update all submodules
+      run: |
+        git submodule foreach git fetch --all
+        git submodule foreach git reset --hard origin/master
+    
+    - name: Checkout production branch of next theme
+      run: |
+        cd themes/next && git checkout production
+
+    - name: Setup node environment
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - name: Install tuture globally
+      run: |
+        git clone --depth=1 https://github.com/tuture-dev/tuture.git
+        cd tuture && yarn && yarn build:cli && npm install -g
+
+    - name: Install imagemagick
+      run: |
+        sudo apt-get update
+        sudo apt-get install imagemagick -y --fix-missing
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      if: github.event_name != 'schedule'
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-${{ env.cache-name }}-
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
+
+    - name: Install npm dependencies
+      run: |
+        yarn
+  
+    - name: Build entire site
+      run: |
+        yarn build:roadmaps
+        yarn build:tutorials
+        yarn clean
+        yarn algolia
+        yarn build
+      env:
+        IMG_QUALITY: 30    # 文章中图片的 JPG 压缩质量
+        COVER_QUALITY: 70  # 文章封面的 JPG 压缩质量
+        ID_DIGITS: 7       # 文章 ID 位数（后期需要增加 ID 位数以避免碰撞）
+        HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
+
+    - name: Deploy
+      run: |
+        git checkout -b $BRANCH_NAME
+        node script/movePublicToRoot.js
+        git add .
+        git commit -m "Automatic deploy (`date`)"
+        git remote add $REMOTE $CODING_REPO
+        git push -f -u $REMOTE $BRANCH_NAME
+      env:
+        REMOTE: coding
+        BRANCH_NAME: coding-pages
+        CODING_REPO: ${{ secrets.CODING_REPO }}

@@ -1,0 +1,31 @@
+name: Update Submodules
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # every day
+
+jobs:
+  staging:
+    runs-on: ubuntu-18.04
+
+    # Only run this action in tuture-dev/hub
+    if: github.repository == 'tuture-dev/hub'
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Update all submodules
+      run: |
+        git submodule foreach git fetch --all
+        git submodule foreach git reset --hard origin/master
+
+    - name: Commit new submodules
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git diff-index --quiet HEAD || git commit -m "Automatic commit from update-submodules action (`date`)" -a
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
