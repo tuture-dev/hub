@@ -5,8 +5,8 @@
 # Site
 title: 图雀社区
 subtitle: 汇集精彩的实战技术教程
-description: 由 <a href="https://github.com/tuture-dev/tuture" target="_blank">Tuture</a> 工具写成，这里汇集了能够让你从头敲到尾并做出可运行项目的技术教程
-keywords: Web前端开发,小程序开发,移动端开发,后端实战教程
+description: 图雀社区是一个供大家分享用 Tuture 写作工具完成的教程的一个平台。在这里，读者们可以尽情享受高质量且免费的实战教程，并能与作者和其他读者互动和讨论；而作者们也可以借此传播他们的技术知识，宣传他们的开源项目，找到自己输出内容的受众，加速技术的传播。
+keywords: 图雀社区,Tuture,Vue.js实战教程,微信小程序,Kotlin,React Native,Webpack,MVVM,React.js,Node.js,Redux,Django,MongoDB,Docker,JavaScript,Java,Go,Kubernetes,Nuxt,vue-router,react-router,小程序,跨端开发,Taro,react hooks,redux-saga,learn by doing,Web 前端实战教程,后端实战教程,小程序实战教程,移动端实战教程
 author: 图雀社区
 language: zh-CN
 timezone:
@@ -49,7 +49,7 @@ highlight:
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: ""
   per_page: 10
   order_by: -date
 
@@ -87,7 +87,7 @@ deploy:
     extend_dirs: /
     ignore_hidden: false
     ignore_pattern:
-        public: .
+      public: .
 
 algolia:
   applicationID: 73BSUE4RKU
@@ -102,3 +102,11 @@ symbols_count_time:
   time: true
   total_symbols: true
   total_time: true
+
+baidusitemap:
+  path: baidusitemap.xml
+
+nofollow:
+  enable: true
+  exclude:
+    - https://docs.tuture.co/
