@@ -44,6 +44,10 @@
     {
       "name": "ultra-club",
       "git": "https://github.com/tuture-dev/ultra-club.git"
+    },
+    {
+      "name": "docker-dream",
+      "git": "https://github.com/tuture-dev/docker-dream.git"
     }
   ]
 }
