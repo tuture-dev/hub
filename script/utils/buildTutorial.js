@@ -87,10 +87,10 @@ function buildSinglePost(name, id, cover) {
 
   adjustContent(mdPath, { assetsPath, cover, id });
 
-  fs.moveSync(mdPath, path.join(postsDir, `${id}.md`), {
+  fs.copySync(mdPath, path.join(postsDir, `${id}.md`), {
     overwrite: true,
   });
-  fs.moveSync(assetsPath, path.join(postsDir, id), { overwrite: true });
+  fs.copySync(assetsPath, path.join(postsDir, id), { overwrite: true });
 }
 
 /**
