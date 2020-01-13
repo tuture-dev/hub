@@ -5,7 +5,7 @@ on:
     branches:
     - production
   schedule:
-    - cron: '0 20 * * *'  # 北京时间早上 4:00 部署
+    - cron: '0 */3 * * *'  # 每三小时部署一次
 
 jobs:
   deploy:

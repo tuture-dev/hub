@@ -5,7 +5,7 @@ on:
     branches:
     - master
   schedule:
-    - cron: '0 0 * * *'  # every day
+    - cron: '0 */3 * * *'  # 每三小时部署一次
 
 jobs:
   staging:
