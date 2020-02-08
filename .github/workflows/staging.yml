@@ -68,7 +68,7 @@ jobs:
 
     - name: Staging
       run:
-        node script/staging.js
+        node script/deploy.js
       env:
         DEPLOY_ENV: staging
         SECRET_ID: ${{ secrets.SECRET_ID }}

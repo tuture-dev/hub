@@ -72,15 +72,12 @@ jobs:
         ID_DIGITS: 7       # 文章 ID 位数（后期需要增加 ID 位数以避免碰撞）
         HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
 
-    - name: Deploy
-      run: |
-        git checkout -b $BRANCH_NAME
-        node script/movePublicToRoot.js
-        git add .
-        git commit -m "Automatic deploy (`date`)"
-        git remote add $REMOTE $CODING_REPO
-        git push -f -u $REMOTE $BRANCH_NAME
+    - name: Deploy to production
+      run:
+        node script/deploy.js
       env:
-        REMOTE: coding
-        BRANCH_NAME: coding-pages
-        CODING_REPO: ${{ secrets.CODING_REPO }}
+        DEPLOY_ENV: production
+        SECRET_ID: ${{ secrets.SECRET_ID }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        PROD_BUCKET_NAME: ${{ secrets.PROD_BUCKET_NAME }}
+        PROD_BUCKET_REGION: ${{ secrets.PROD_BUCKET_REGION }}
