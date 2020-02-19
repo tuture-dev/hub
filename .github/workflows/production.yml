@@ -31,8 +31,8 @@ jobs:
 
     - name: Install tuture globally
       run: |
-        git clone --depth=1 https://github.com/tuture-dev/tuture.git
-        cd tuture && git checkout 2.x && yarn && yarn build:cli && npm install -g
+        git clone -b 2.x --depth 1 https://github.com/tuture-dev/tuture.git
+        cd tuture && yarn && yarn build:cli && npm install -g
     - name: Install imagemagick
       run: |
         sudo apt-get update
