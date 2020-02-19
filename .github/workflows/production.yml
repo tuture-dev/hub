@@ -1,0 +1,79 @@
+name: Deploy (Production)
+
+on:
+  push:
+    branches:
+    - production
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+
+    # Only run this action in tuture-dev/hub
+    if: github.repository == 'tuture-dev/hub'
+
+    steps:
+    - name: Configuring git identity
+      run: |
+        git config --global user.email "mrc@mail.tuture.co"
+        git config --global user.name mRcfps
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+        ref: production
+
+    - name: Setup node environment
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - name: Install tuture globally
+      run: |
+        git clone --depth=1 https://github.com/tuture-dev/tuture.git
+        cd tuture && git checkout 2.x && yarn && yarn build:cli && npm install -g
+    - name: Install imagemagick
+      run: |
+        sudo apt-get update
+        sudo apt-get install imagemagick -y --fix-missing
+    - name: Cache node modules
+      uses: actions/cache@v1
+      if: github.event_name != 'schedule'
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-${{ env.cache-name }}-
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
+    - name: Install npm dependencies
+      run: |
+        yarn
+    
+    - name: Download repositories
+      run: |
+        yarn download
+  
+    - name: Build entire site
+      run: |
+        yarn build:roadmaps
+        yarn build:tutorials
+        yarn clean
+        yarn algolia
+        yarn build
+      env:
+        IMG_QUALITY: 50    # 文章中图片的 JPG 压缩质量
+        COVER_QUALITY: 70  # 文章封面的 JPG 压缩质量
+        ID_DIGITS: 7       # 文章 ID 位数（后期需要增加 ID 位数以避免碰撞）
+        HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
+
+    - name: Deploy to production
+      run:
+        node script/deploy.js
+      env:
+        DEPLOY_ENV: production
+        SECRET_ID: ${{ secrets.SECRET_ID }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        PROD_BUCKET_NAME: ${{ secrets.PROD_BUCKET_NAME }}
+        PROD_BUCKET_REGION: ${{ secrets.PROD_BUCKET_REGION }}
