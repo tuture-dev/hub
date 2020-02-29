@@ -98,6 +98,7 @@ function buildSinglePost(name, id, cover) {
  */
 function buildTutorial(tuturePath) {
   process.chdir(tuturePath);
+  cp.execSync('git checkout master^');
   console.log(`Working on ${process.cwd()}.`);
 
   if (!fs.existsSync('tuture.yml')) {
