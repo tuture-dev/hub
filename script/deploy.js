@@ -39,12 +39,8 @@ walk(distDir, (err, filePath) => {
   if (err) throw err;
   cos.putObject(
     {
-      Bucket: isProd
-        ? process.env.PROD_BUCKET_NAME
-        : process.env.STAGING_BUCKET_NAME,
-      Region: isProd
-        ? process.env.PROD_BUCKET_REGION
-        : process.env.STAGING_BUCKET_REGION,
+      Bucket: process.env.BUCKET_NAME,
+      Region: process.env.BUCKET_REGION,
       Key: filePath.substr(distDir.length + 1),
       Body: fs.createReadStream(filePath),
     },
