@@ -6,9 +6,7 @@ node_js:
   - 12
 
 env:
-  - IMG_QUALITY=30     # 文章中图片的 JPG 压缩质量
-  - COVER_QUALITY=70   # 文章封面的 JPG 压缩质量
-  - ID_DIGITS=7        # 文章 ID 位数（后期需要增加 ID 位数以避免碰撞）
+  - IMG_QUALITY=30 COVER_QUALITY=70 ID_DIGITS=7
 
 before_install:
   - sudo apt-get update -q

@@ -18,29 +18,40 @@ if (!fs.existsSync(coversDir)) {
 // Sub-directory for storing markdowns of each tutorial.
 const buildDir = 'tuture-build';
 
+const workspace = '.tuture';
+
+const collectionPath = path.join(workspace, 'collection.json');
+const assetsJsonPath = path.join(workspace, 'tuture-assets.json');
+const assetsDir = path.join(workspace, 'assets');
+
 /**
  * Compress all images (except for GIFs).
  */
-function compressImages(assetsRoot, content) {
+function compressImages(content) {
   let newContent = content;
-  fs.readdirSync(assetsRoot).forEach(imgName => {
-    const oldPath = path.join(assetsRoot, imgName);
-    const { dir, name, ext } = path.parse(oldPath);
+  const assets = JSON.parse(fs.readFileSync(assetsJsonPath).toString());
+
+  assets.forEach(({ localPath, hostingUri }) => {
+    const { dir, base, name, ext } = path.parse(localPath);
 
     if (ext !== '.gif') {
       const newPath = path.join(dir, `${name}.jpg`);
       const imgQuality = process.env.IMG_QUALITY || '30';
 
       // Compress images into degraded JPEG format and remove old ones.
-      cp.execSync(`convert -quality ${imgQuality}% "${oldPath}" "${newPath}"`);
+      cp.execSync(
+        `convert -quality ${imgQuality}% "${localPath}" "${newPath}"`,
+      );
 
       // Remove useless images.
-      if (oldPath !== newPath) {
-        cp.execSync(`rm "${oldPath}"`);
+      if (localPath !== newPath) {
+        cp.execSync(`rm "${localPath}"`);
       }
 
       // Update image paths in markdown.
-      newContent = newContent.replace(new RegExp(imgName, 'g'), `${name}.jpg`);
+      newContent = newContent.replace(hostingUri, `./${name}.jpg`);
+    } else {
+      newContent = newContent.replace(hostingUri, `./${base}`);
     }
   });
 
@@ -51,7 +62,7 @@ function compressImages(assetsRoot, content) {
  * Function for adjusting markdown content in place.
  */
 function adjustContent(markdownPath, info) {
-  const { assetsPath, cover, id } = info;
+  const { cover, id } = info;
 
   let content = fs.readFileSync(markdownPath).toString();
 
@@ -69,7 +80,7 @@ function adjustContent(markdownPath, info) {
   }
 
   // Perform image compression.
-  content = compressImages(assetsPath, content);
+  content = compressImages(content);
 
   // Set the lang of all vue code blocks to html,
   // since highlight.js doesn't support vue syntax.
@@ -81,16 +92,21 @@ function adjustContent(markdownPath, info) {
 /**
  * Build a single hexo post.
  */
-function buildSinglePost(name, id, cover) {
-  const assetsPath = path.join(buildDir, name);
+function buildSingleArticle(article) {
+  const { name, id, cover } = article;
+  const truncatedId = id
+    .toString()
+    .slice(0, Number(process.env.ID_DIGITS) || 7);
   const mdPath = path.join(buildDir, `${name}.md`);
 
-  adjustContent(mdPath, { assetsPath, cover, id });
+  adjustContent(mdPath, { cover, id: truncatedId });
 
-  fs.copySync(mdPath, path.join(postsDir, `${id}.md`), {
+  fs.copySync(mdPath, path.join(postsDir, `${truncatedId}.md`), {
     overwrite: true,
   });
-  fs.copySync(assetsPath, path.join(postsDir, id), { overwrite: true });
+  fs.copySync(assetsDir, path.join(postsDir, truncatedId), {
+    overwrite: true,
+  });
 }
 
 /**
@@ -98,29 +114,17 @@ function buildSinglePost(name, id, cover) {
  */
 function buildTutorial(tuturePath) {
   process.chdir(tuturePath);
-  cp.execSync('git checkout master^');
-  console.log(`Working on ${process.cwd()}.`);
-
-  if (!fs.existsSync('tuture.yml')) {
-    console.log('Not in a Tuture tutorial, skipping.');
-    process.chdir(root);
-    return;
-  }
+  console.log(`\nWorking on ${process.cwd()}.`);
 
   // Build tutorial as usual.
-  cp.execSync('tuture reload && tuture build --hexo');
+  cp.execSync('tuture reload && tuture download-assets && tuture build --hexo');
+  console.log('Build complete.');
 
-  const tuture = yaml.safeLoad(fs.readFileSync('tuture.yml').toString());
+  const collection = JSON.parse(fs.readFileSync(collectionPath).toString());
   const idDigits = Number(process.env.ID_DIGITS) || 7;
   const convertId = id => id.toString().slice(0, idDigits);
 
-  if (tuture.splits) {
-    tuture.splits.forEach(split =>
-      buildSinglePost(split.name, convertId(split.id), split.cover),
-    );
-  } else {
-    buildSinglePost(tuture.name, convertId(tuture.id), tuture.cover);
-  }
+  collection.articles.forEach(article => buildSingleArticle(article));
 
   console.log(`Finished ${process.cwd()}.`);
   process.chdir(root);
