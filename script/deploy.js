@@ -1,12 +1,13 @@
+const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
-const COS = require('cos-nodejs-sdk-v5');
+const OSS = require('ali-oss');
 
-require('dotenv').config();
-
-const cos = new COS({
-  SecretId: process.env.SECRET_ID,
-  SecretKey: process.env.SECRET_KEY,
+const client = new OSS({
+  accessKeyId: process.env.ACCESS_KEY_ID,
+  accessKeySecret: process.env.ACCESS_KEY_SECRET,
+  bucket: process.env.BUCKET_NAME,
+  region: process.env.BUCKET_REGION,
 });
 
 const distDir = 'public';
@@ -33,19 +34,10 @@ function walk(dirName, callback) {
   });
 }
 
-const isProd = process.env.DEPLOY_ENV === 'production';
-
 walk(distDir, (err, filePath) => {
   if (err) throw err;
-  cos.putObject(
-    {
-      Bucket: process.env.BUCKET_NAME,
-      Region: process.env.BUCKET_REGION,
-      Key: filePath.substr(distDir.length + 1),
-      Body: fs.createReadStream(filePath),
-    },
-    function(err, data) {
-      console.log(err || data);
-    },
-  );
+  client
+    .put(filePath.substr(distDir.length + 1), filePath)
+    .then(() => console.log(chalk.green(`${filePath} uploaded!`)))
+    .catch(err => console.log(chalk.red(`${filePath} failed.`), err));
 });

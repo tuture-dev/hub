@@ -43,11 +43,6 @@ function compressImages(content) {
         `convert -quality ${imgQuality}% "${localPath}" "${newPath}"`,
       );
 
-      // Remove useless images.
-      if (localPath !== newPath) {
-        cp.execSync(`rm "${localPath}"`);
-      }
-
       // Update image paths in markdown.
       newContent = newContent.replace(hostingUri, `./${name}.jpg`);
     } else {
@@ -117,7 +112,7 @@ function buildTutorial(tuturePath) {
   console.log(`\nWorking on ${process.cwd()}.`);
 
   // Build tutorial as usual.
-  cp.execSync('tuture reload && tuture download-assets && tuture build --hexo');
+  cp.execSync('tuture reload && tuture build --hexo');
   console.log('Build complete.');
 
   const collection = JSON.parse(fs.readFileSync(collectionPath).toString());
