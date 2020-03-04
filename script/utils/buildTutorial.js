@@ -9,49 +9,12 @@ const root = process.cwd();
 // Path to hexo posts.
 const postsDir = path.join(root, 'source', '_posts');
 
-// Path to tutorial covers.
-const coversDir = path.join(root, 'source', 'images', 'covers');
-if (!fs.existsSync(coversDir)) {
-  fs.mkdirpSync(coversDir);
-}
-
 // Sub-directory for storing markdowns of each tutorial.
 const buildDir = 'tuture-build';
 
 const workspace = '.tuture';
 
 const collectionPath = path.join(workspace, 'collection.json');
-const assetsJsonPath = path.join(workspace, 'tuture-assets.json');
-const assetsDir = path.join(workspace, 'assets');
-
-/**
- * Compress all images (except for GIFs).
- */
-function compressImages(content) {
-  let newContent = content;
-  const assets = JSON.parse(fs.readFileSync(assetsJsonPath).toString());
-
-  assets.forEach(({ localPath, hostingUri }) => {
-    const { dir, base, name, ext } = path.parse(localPath);
-
-    if (ext !== '.gif') {
-      const newPath = path.join(dir, `${name}.jpg`);
-      const imgQuality = process.env.IMG_QUALITY || '30';
-
-      // Compress images into degraded JPEG format and remove old ones.
-      cp.execSync(
-        `convert -quality ${imgQuality}% "${localPath}" "${newPath}"`,
-      );
-
-      // Update image paths in markdown.
-      newContent = newContent.replace(hostingUri, `./${name}.jpg`);
-    } else {
-      newContent = newContent.replace(hostingUri, `./${base}`);
-    }
-  });
-
-  return newContent;
-}
 
 /**
  * Function for adjusting markdown content in place.
@@ -60,22 +23,6 @@ function adjustContent(markdownPath, info) {
   const { cover, id } = info;
 
   let content = fs.readFileSync(markdownPath).toString();
-
-  // Move the cover and compress.
-  if (cover && content.match(cover)) {
-    const newCoverName = `${id}.jpg`;
-    const targetCover = path.join(coversDir, newCoverName);
-    const coverQuality = process.env.COVER_QUALITY || '70';
-
-    cp.execSync(
-      `convert -quality ${coverQuality}% "${cover}" "${targetCover}"`,
-    );
-
-    content = content.replace(cover, `/images/covers/${newCoverName}`);
-  }
-
-  // Perform image compression.
-  content = compressImages(content);
 
   // Set the lang of all vue code blocks to html,
   // since highlight.js doesn't support vue syntax.
@@ -97,9 +44,6 @@ function buildSingleArticle(article) {
   adjustContent(mdPath, { cover, id: truncatedId });
 
   fs.copySync(mdPath, path.join(postsDir, `${truncatedId}.md`), {
-    overwrite: true,
-  });
-  fs.copySync(assetsDir, path.join(postsDir, truncatedId), {
     overwrite: true,
   });
 }

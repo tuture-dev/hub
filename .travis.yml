@@ -6,11 +6,7 @@ node_js:
   - 12
 
 env:
-  - IMG_QUALITY=30 COVER_QUALITY=70 ID_DIGITS=7
-
-before_install:
-  - sudo apt-get update -q
-  - sudo apt-get install imagemagick -y --fix-missing
+  - ID_DIGITS=7
 
 before_script:
   - npm i -g tuture@latest
