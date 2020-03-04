@@ -1,6 +1,8 @@
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
+const retry = require('retry');
+const pRetry = require('p-retry');
 const OSS = require('ali-oss');
 
 const client = new OSS({
@@ -36,8 +38,12 @@ function walk(dirName, callback) {
 
 walk(distDir, (err, filePath) => {
   if (err) throw err;
-  client
-    .put(filePath.substr(distDir.length + 1), filePath)
+
+  pRetry(() => client.put(filePath.substr(distDir.length + 1), filePath), {
+    retries: 5,
+  })
     .then(() => console.log(chalk.green(`${filePath} uploaded!`)))
-    .catch(err => console.log(chalk.red(`${filePath} failed.`), err));
+    .catch(err => {
+      throw new Error(`${filePath} upload failed after 5 retries`);
+    });
 });
