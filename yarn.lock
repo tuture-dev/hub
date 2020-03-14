@@ -44,9 +44,9 @@ accepts@~1.3.5:
     negotiator "0.6.2"
 
 acorn@^6.1.1:
-  version "6.4.0"
-  resolved "http://r.cnpmjs.org/acorn/download/acorn-6.4.0.tgz#b659d2ffbafa24baf5db1cdbb2c94a983ecd2784"
-  integrity sha1-tlnS/7r6JLr12xzbsslKmD7NJ4Q=
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
+  integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
 
 acorn@^7.0.0:
   version "7.1.0"
@@ -171,7 +171,7 @@ ansi-regex@^3.0.0:
 
 ansi-regex@^4.1.0:
   version "4.1.0"
-  resolved "http://r.cnpmjs.org/ansi-regex/download/ansi-regex-4.1.0.tgz#8b9f8f08cf1acb843756a839ca8c7e3168c51997"
+  resolved "https://r.cnpmjs.org/ansi-regex/download/ansi-regex-4.1.0.tgz#8b9f8f08cf1acb843756a839ca8c7e3168c51997"
   integrity sha1-i5+PCM8ay4Q3Vqg5yox+MWjFGZc=
 
 ansi-regex@^5.0.0:
@@ -500,7 +500,7 @@ braces@^3.0.1, braces@~3.0.2:
 
 browser-fingerprint@0.0.1:
   version "0.0.1"
-  resolved "http://r.cnpmjs.org/browser-fingerprint/download/browser-fingerprint-0.0.1.tgz#8df3cdca25bf7d5b3542d61545d730053fce604a"
+  resolved "https://r.cnpmjs.org/browser-fingerprint/download/browser-fingerprint-0.0.1.tgz#8df3cdca25bf7d5b3542d61545d730053fce604a"
   integrity sha1-jfPNyiW/fVs1QtYVRdcwBT/OYEo=
 
 buffer-equal-constant-time@^1.0.1:
@@ -913,7 +913,7 @@ copy-to@^2.0.1:
 
 core-js@^1.1.1:
   version "1.2.7"
-  resolved "http://r.cnpmjs.org/core-js/download/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
+  resolved "https://r.cnpmjs.org/core-js/download/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
   integrity sha1-ZSKUwUZR2yj6k70tX/KYOk8IxjY=
 
 core-util-is@1.0.2, core-util-is@^1.0.2, core-util-is@~1.0.0:
@@ -1009,7 +1009,7 @@ cuid@^2.1.4:
 
 cuid@~1.3.8:
   version "1.3.8"
-  resolved "http://r.cnpmjs.org/cuid/download/cuid-1.3.8.tgz#4b875e0969bad764f7ec0706cf44f5fb0831f6b7"
+  resolved "https://r.cnpmjs.org/cuid/download/cuid-1.3.8.tgz#4b875e0969bad764f7ec0706cf44f5fb0831f6b7"
   integrity sha1-S4deCWm612T37AcGz0T1+wgx9rc=
   dependencies:
     browser-fingerprint "0.0.1"
@@ -1268,7 +1268,7 @@ ejs@^2.3.4:
 
 ejs@^2.5.5:
   version "2.7.4"
-  resolved "http://r.cnpmjs.org/ejs/download/ejs-2.7.4.tgz#48661287573dcc53e366c7a1ae52c3a120eec9ba"
+  resolved "https://r.cnpmjs.org/ejs/download/ejs-2.7.4.tgz#48661287573dcc53e366c7a1ae52c3a120eec9ba"
   integrity sha1-SGYSh1c9zFPjZsehrlLDoSDuybo=
 
 encodeurl@~1.0.2:
@@ -1899,7 +1899,7 @@ hexo-autonofollow@^1.0.1:
 
 hexo-bunyan@^1.0.0:
   version "1.0.0"
-  resolved "http://r.cnpmjs.org/hexo-bunyan/download/hexo-bunyan-1.0.0.tgz#b2106b26547b232f0195db863cb5d5ff8527fd36"
+  resolved "https://r.cnpmjs.org/hexo-bunyan/download/hexo-bunyan-1.0.0.tgz#b2106b26547b232f0195db863cb5d5ff8527fd36"
   integrity sha1-shBrJlR7Iy8BlduGPLXV/4Un/TY=
   optionalDependencies:
     moment "^2.10.6"
@@ -1917,7 +1917,7 @@ hexo-bunyan@^2.0.0:
 
 hexo-cli@^2.0.0:
   version "2.0.0"
-  resolved "http://r.cnpmjs.org/hexo-cli/download/hexo-cli-2.0.0.tgz#485b876829951886cbfc0bd20f92b745d65bc00b"
+  resolved "https://r.cnpmjs.org/hexo-cli/download/hexo-cli-2.0.0.tgz#485b876829951886cbfc0bd20f92b745d65bc00b"
   integrity sha1-SFuHaCmVGIbL/AvSD5K3RdZbwAs=
   dependencies:
     abbrev "^1.1.1"
@@ -1963,7 +1963,7 @@ hexo-deployer-git@^2.0.0:
 
 hexo-front-matter@^0.2.3:
   version "0.2.3"
-  resolved "http://r.cnpmjs.org/hexo-front-matter/download/hexo-front-matter-0.2.3.tgz#c7ca8ef420ea36bd85e8408a2e8c9bf49efa605e"
+  resolved "https://r.cnpmjs.org/hexo-front-matter/download/hexo-front-matter-0.2.3.tgz#c7ca8ef420ea36bd85e8408a2e8c9bf49efa605e"
   integrity sha1-x8qO9CDqNr2F6ECKLoyb9J76YF4=
   dependencies:
     js-yaml "^3.6.1"
@@ -1987,7 +1987,7 @@ hexo-fs@^0.2.2:
 
 hexo-fs@^1.0.0, hexo-fs@^1.0.2:
   version "1.0.2"
-  resolved "http://r.cnpmjs.org/hexo-fs/download/hexo-fs-1.0.2.tgz#5eabe344a79ab68e2fa6937cc5d468129308659f"
+  resolved "https://r.cnpmjs.org/hexo-fs/download/hexo-fs-1.0.2.tgz#5eabe344a79ab68e2fa6937cc5d468129308659f"
   integrity sha1-XqvjRKeato4vppN8xdRoEpMIZZ8=
   dependencies:
     bluebird "^3.5.1"
@@ -2015,7 +2015,7 @@ hexo-generator-archive@^0.1.5:
 
 hexo-generator-baidu-sitemap@^0.1.6:
   version "0.1.6"
-  resolved "http://r.cnpmjs.org/hexo-generator-baidu-sitemap/download/hexo-generator-baidu-sitemap-0.1.6.tgz#0ac2f89a62a28d9b5b9710fdd29d2e9425d54f04"
+  resolved "https://r.cnpmjs.org/hexo-generator-baidu-sitemap/download/hexo-generator-baidu-sitemap-0.1.6.tgz#0ac2f89a62a28d9b5b9710fdd29d2e9425d54f04"
   integrity sha1-CsL4mmKijZtblxD90p0ulCXVTwQ=
   dependencies:
     ejs "^2.5.5"
@@ -2064,7 +2064,7 @@ hexo-generator-tag@^0.2.0:
 
 hexo-i18n@^0.2.1:
   version "0.2.1"
-  resolved "http://r.cnpmjs.org/hexo-i18n/download/hexo-i18n-0.2.1.tgz#84f141432bf09d8b558ed878c728164b6d1cd6de"
+  resolved "https://r.cnpmjs.org/hexo-i18n/download/hexo-i18n-0.2.1.tgz#84f141432bf09d8b558ed878c728164b6d1cd6de"
   integrity sha1-hPFBQyvwnYtVjth4xygWS20c1t4=
   dependencies:
     sprintf-js "^1.0.2"
@@ -2078,7 +2078,7 @@ hexo-i18n@^1.0.0:
 
 hexo-log@^0.2.0:
   version "0.2.0"
-  resolved "http://r.cnpmjs.org/hexo-log/download/hexo-log-0.2.0.tgz#d30fd45e1a12a83c88033586640485efc5df5a6f"
+  resolved "https://r.cnpmjs.org/hexo-log/download/hexo-log-0.2.0.tgz#d30fd45e1a12a83c88033586640485efc5df5a6f"
   integrity sha1-0w/UXhoSqDyIAzWGZASF78XfWm8=
   dependencies:
     chalk "^1.1.1"
@@ -2212,7 +2212,7 @@ hexo-util@^1.4.0, hexo-util@^1.6.1, hexo-util@^1.7.0:
 
 hexo@^3.0.0:
   version "3.9.0"
-  resolved "http://r.cnpmjs.org/hexo/download/hexo-3.9.0.tgz#7b5afe3b7de8829469635acc952757fac3ec863c"
+  resolved "https://r.cnpmjs.org/hexo/download/hexo-3.9.0.tgz#7b5afe3b7de8829469635acc952757fac3ec863c"
   integrity sha1-e1r+O33ogpRpY1rMlSdX+sPshjw=
   dependencies:
     abbrev "^1.1.1"
@@ -3272,7 +3272,7 @@ no-case@^3.0.2:
 
 node-fingerprint@0.0.2:
   version "0.0.2"
-  resolved "http://r.cnpmjs.org/node-fingerprint/download/node-fingerprint-0.0.2.tgz#31cbabeb71a67ae7dd5a7dc042e51c3c75868501"
+  resolved "https://r.cnpmjs.org/node-fingerprint/download/node-fingerprint-0.0.2.tgz#31cbabeb71a67ae7dd5a7dc042e51c3c75868501"
   integrity sha1-Mcur63GmeufdWn3AQuUcPHWGhQE=
 
 node-pre-gyp@^0.12.0:
@@ -3973,7 +3973,7 @@ resolve-url@^0.2.1:
 
 resolve@^1.10.0:
   version "1.14.1"
-  resolved "http://r.cnpmjs.org/resolve/download/resolve-1.14.1.tgz#9e018c540fcf0c427d678b9931cbf45e984bcaff"
+  resolved "https://r.cnpmjs.org/resolve/download/resolve-1.14.1.tgz#9e018c540fcf0c427d678b9931cbf45e984bcaff"
   integrity sha1-ngGMVA/PDEJ9Z4uZMcv0XphLyv8=
   dependencies:
     path-parse "^1.0.6"
@@ -4355,7 +4355,7 @@ strip-ansi@^4.0.0:
 
 strip-ansi@^5.0.0:
   version "5.2.0"
-  resolved "http://r.cnpmjs.org/strip-ansi/download/strip-ansi-5.2.0.tgz#8c9a536feb6afc962bdfa5b104a5091c1ad9c0ae"
+  resolved "https://r.cnpmjs.org/strip-ansi/download/strip-ansi-5.2.0.tgz#8c9a536feb6afc962bdfa5b104a5091c1ad9c0ae"
   integrity sha1-jJpTb+tq/JYr36WxBKUJHBrZwK4=
   dependencies:
     ansi-regex "^4.1.0"
@@ -4498,7 +4498,7 @@ thunkify@^2.1.2:
 
 tildify@^1.2.0:
   version "1.2.0"
-  resolved "http://r.cnpmjs.org/tildify/download/tildify-1.2.0.tgz#dcec03f55dca9b7aa3e5b04f21817eb56e63588a"
+  resolved "https://r.cnpmjs.org/tildify/download/tildify-1.2.0.tgz#dcec03f55dca9b7aa3e5b04f21817eb56e63588a"
   integrity sha1-3OwD9V3Km3qj5bBPIYF+tW5jWIo=
   dependencies:
     os-homedir "^1.0.0"
@@ -4753,7 +4753,7 @@ verror@1.10.0:
 
 warehouse@^2.2.0:
   version "2.2.0"
-  resolved "http://r.cnpmjs.org/warehouse/download/warehouse-2.2.0.tgz#5d09d64942992be667d8f7c86a09c2b8aea04062"
+  resolved "https://r.cnpmjs.org/warehouse/download/warehouse-2.2.0.tgz#5d09d64942992be667d8f7c86a09c2b8aea04062"
   integrity sha1-XQnWSUKZK+Zn2PfIagnCuK6gQGI=
   dependencies:
     JSONStream "^1.0.7"
