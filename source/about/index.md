@@ -22,6 +22,7 @@ comments: false
 
 图雀是为开源社区而生的产品，图雀的发展离不开大家的热情参与，如果你想加入我们或者你遇到了问题需要咨询我们，可以通过下面的联系方式找到我们：
 
-- Gitter 聊天室：https://gitter.im/tuture-dev/tuture
 - 图雀反馈邮箱：feedback@tuture.co
-- QQ 群：916335179
+- 微信公众号，关注公众号回复 “z“ 或者 ”交流“ 可以拉反馈和学习交流群哦~
+
+![微信公众号（真）](https://tva1.sinaimg.cn/large/00831rSTgy1gd3rypmn32j30p00dw41z.jpg)
