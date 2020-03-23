@@ -1,0 +1,24 @@
+language: node_js
+
+dist: xenial
+
+node_js:
+  - 12
+
+env:
+  - ID_DIGITS=7
+
+before_script:
+  - npm i -g tuture@latest
+
+script:
+  - yarn
+  - yarn download
+  - yarn build:roadmaps
+  - yarn build:tutorials
+  - yarn clean
+  - yarn algolia
+  - yarn build
+  - node script/deploy.js
+
+cache: yarn
