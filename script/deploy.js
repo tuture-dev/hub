@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
 const retry = require('retry');
-const pRetry = require('p-retry');
+const pLimit = require('p-limit');
 const OSS = require('ali-oss');
 
 const client = new OSS({
@@ -13,37 +13,35 @@ const client = new OSS({
 });
 
 const distDir = 'public';
+const filePaths = [];
 
-function walk(dirName, callback) {
-  fs.readdir(dirName, (err, files) => {
-    if (err) {
-      callback(err, null);
+function walk(dirName) {
+  const files = fs.readdirSync(dirName);
+
+  files.forEach(file => {
+    const fullPath = path.join(dirName, file);
+    const stat = fs.statSync(fullPath);
+
+    if (stat.isDirectory()) {
+      walk(fullPath);
+    } else {
+      filePaths.push(fullPath);
     }
-
-    files.forEach(file => {
-      const fullPath = path.join(dirName, file);
-      fs.stat(fullPath, (err, file) => {
-        if (err) {
-          callback(err, null);
-        }
-        if (file.isDirectory()) {
-          walk(fullPath, callback);
-        } else {
-          callback(null, fullPath);
-        }
-      });
-    });
   });
 }
 
-walk(distDir, (err, filePath) => {
-  if (err) throw err;
+walk(distDir);
 
-  pRetry(() => client.put(filePath.substr(distDir.length + 1), filePath), {
-    retries: 5,
-  })
-    .then(() => console.log(chalk.green(`${filePath} uploaded!`)))
-    .catch(err => {
-      throw new Error(`${filePath} upload failed after 5 retries`);
-    });
-});
+const limit = pLimit(2);
+
+const uploadTasks = filePaths.map(filePath =>
+  limit(async () => {
+    await client.put(filePath.substr(distDir.length + 1), filePath);
+    console.log(`Upload ${filePath} successfully.`);
+  }),
+);
+
+(async () => {
+  await Promise.all(uploadTasks);
+  console.log('Upload complete!');
+})();

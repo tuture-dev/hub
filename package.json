@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "4.1.0"
+    "version": "4.2.0"
   },
   "scripts": {
     "start": "hexo server",
@@ -29,7 +29,6 @@
     "hexo-generator-index": "^0.2.1",
     "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
-    "hexo-related-popular-posts": "^3.0.6",
     "hexo-renderer-ejs": "^0.3.1",
     "hexo-renderer-marked": "^1.0.1",
     "hexo-renderer-stylus": "^0.3.3",
@@ -37,6 +36,7 @@
     "hexo-symbols-count-time": "^0.6.1",
     "hexo-util": "^1.7.0",
     "js-yaml": "^3.13.1",
+    "p-limit": "^2.2.2",
     "p-retry": "^4.2.0"
   }
 }
