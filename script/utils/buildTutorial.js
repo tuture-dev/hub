@@ -10,11 +10,12 @@ const root = process.cwd();
 const postsDir = path.join(root, 'source', '_posts');
 
 // Sub-directory for storing markdowns of each tutorial.
-const buildDir = 'tuture-build';
 
 const workspace = '.tuture';
 
 const collectionPath = path.join(workspace, 'collection.json');
+
+const buildDir = path.join(workspace, 'build');
 
 /**
  * Function for adjusting markdown content in place.
