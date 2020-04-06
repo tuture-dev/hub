@@ -48,6 +48,10 @@
     {
       "name": "docker-dream",
       "git": "https://github.com/tuture-dev/docker-dream.git"
+    },
+    {
+      "name": "typescript-tea",
+      "git": "https://github.com/tuture-dev/typescript-tea.git"
     }
   ]
 }
