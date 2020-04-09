@@ -48,6 +48,10 @@
     {
       "name": "docker-dream",
       "git": "https://github.com/tuture-dev/docker-dream.git"
+    },
+    {
+      "name": "jest-just-go",
+      "git": "git@github.com:studytoohard/jest-just-go.git"
     }
   ]
 }
