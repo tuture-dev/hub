@@ -52,6 +52,10 @@
     {
       "name": "jest-just-go",
       "git": "git@github.com:studytoohard/jest-just-go.git"
+    },
+    {
+      "name": "typescript-tea",
+      "git": "https://github.com/tuture-dev/typescript-tea.git"
     }
   ]
 }
