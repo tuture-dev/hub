@@ -51,7 +51,7 @@
     },
     {
       "name": "jest-just-go",
-      "git": "git@github.com:studytoohard/jest-just-go.git"
+      "git": "https://github.com/studytoohard/jest-just-go.git"
     },
     {
       "name": "typescript-tea",
