@@ -56,6 +56,10 @@
     {
       "name": "typescript-tea",
       "git": "https://github.com/tuture-dev/typescript-tea.git"
+    },
+    {
+      "name": "covid-19-with-hooks",
+      "git": "https://github.com/tuture-dev/covid-19-with-hooks.git"
     }
   ]
 }
