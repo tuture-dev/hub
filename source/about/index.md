@@ -16,7 +16,7 @@ comments: false
 
 同时，对于教程创作者们来说，只需向图雀社区的 [GitHub 仓库](https://github.com/tuture-dev/hub)提交 Pull Request，即可贡献教程。我们希望图雀生态圈（Tuture 写作工具和图雀社区）能够予力技术传播的先驱们，帮助他们在传播技术的过程中快速写出优秀的技术教程，加快新技术的传播，从而为技术社区的蓬勃发展贡献力量。
 
-想要了解更多关于图雀的信息，请参考我们的[官方文档](https://docs.tuture.co)。
+想要了解更多关于图雀的信息，请参考我们的[官方文档](https://www.yuque.com/tuture/product-manuals)。
 
 ## 联系我们
 
