@@ -29,6 +29,9 @@ function adjustContent(markdownPath, info) {
   // since highlight.js doesn't support vue syntax.
   content = content.replace(/```vue/g, '```html');
 
+  // Replace tsx to ts.
+  content = content.replace(/```tsx/g, '```ts');
+
   fs.writeFileSync(markdownPath, content);
 }
 
@@ -62,9 +65,9 @@ function buildTutorial(tuturePath) {
 
   const collection = JSON.parse(fs.readFileSync(collectionPath).toString());
   const idDigits = Number(process.env.ID_DIGITS) || 7;
-  const convertId = id => id.toString().slice(0, idDigits);
+  const convertId = (id) => id.toString().slice(0, idDigits);
 
-  collection.articles.forEach(article => buildSingleArticle(article));
+  collection.articles.forEach((article) => buildSingleArticle(article));
 
   console.log(`Finished ${process.cwd()}.`);
   process.chdir(root);
