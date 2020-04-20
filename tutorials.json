@@ -60,6 +60,10 @@
     {
       "name": "covid-19-with-hooks",
       "git": "https://github.com/tuture-dev/covid-19-with-hooks.git"
+    },
+    {
+      "name": "jd-miniprogram",
+      "git": "https://github.com/tuture-dev/jd-miniprogram.git"
     }
   ]
 }
