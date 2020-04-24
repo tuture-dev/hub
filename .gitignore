@@ -8,7 +8,8 @@ public/
 .vscode
 .env
 
-source/_posts
+source/_posts/*
+!source/_posts/@*.md
 source/images/covers
 source/roadmaps/*
 !source/roadmaps/index.md
