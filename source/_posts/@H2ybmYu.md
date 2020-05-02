@@ -26,7 +26,7 @@ photos:
 ## 开始学习
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1587819778980-c9e6dfac-c7f9-4542-a1c4-64cb4d749243.png#align=left&display=inline&height=360&margin=%5Bobject%20Object%5D&originHeight=360&originWidth=640&size=0&status=done&style=none&width=640)
+![](https://imgkr.cn-bj.ufileos.com/1d6d78a0-13a5-4839-9f0c-92e4dcdbc0a7.png)
 
 
 ### 起步
@@ -44,7 +44,7 @@ photos:
 #### 我们将实现什么？（样式略差请原谅）
 
 
-![640](https://tva1.sinaimg.cn/large/007S8ZIlgy1geeg0h5hrsg30840e8qv5.gif)
+![640](https://imgkr.cn-bj.ufileos.com/c01434c9-28d9-42e1-bf1e-4892543ab5d2.gif)
 
 
 #### 具体有四个页面：
@@ -72,13 +72,13 @@ photos:
 创建新的uniapp项目，记得勾选启用uniCloud，我选用的阿里云
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1587819778896-066f804a-3d97-4b00-b793-0ea634eacad9.png#align=left&display=inline&height=284&margin=%5Bobject%20Object%5D&originHeight=1137&originWidth=1551&size=0&status=done&style=none&width=388)
+![](https://imgkr.cn-bj.ufileos.com/6d8bd7d9-e57f-4261-aa8c-edacb6733c36.png)
 
 
 目录结构如下
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1587819778984-4483789e-d4e1-4e7b-821c-435b2d2a4b08.png#align=left&display=inline&height=217&margin=%5Bobject%20Object%5D&originHeight=433&originWidth=1024&size=0&status=done&style=none&width=512)
+![](https://imgkr.cn-bj.ufileos.com/38181cf3-463a-4355-828d-d67a7bd92d99.png)
 
 
 > **提示**
@@ -104,7 +104,7 @@ photos:
 首先插件市场下载zip包
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1587819778937-d1574121-f337-4b9f-862b-305d767b5ab5.png#align=left&display=inline&height=368&margin=%5Bobject%20Object%5D&originHeight=368&originWidth=1686&size=0&status=done&style=none&width=1686)
+![](https://imgkr.cn-bj.ufileos.com/13eceb9c-ab99-4c55-be28-c1c6317cfe5c.png)
 
 
 文件放在项目的根目录，之后我会把自己的组件或者样式文件都放其中。 在App.vue 文件中引入
@@ -124,10 +124,10 @@ photos:
 打开pages/index/index.vue， 写下测试代码 `<button type="default" class="bg-blue btn cu-btn">click</button>`， 启动微信小程序，可查看运行结果正确，说明导入成功
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1587819778999-9d1ea607-bd0a-4f2f-b7d0-3d7889f5842a.png#align=left&display=inline&height=256&margin=%5Bobject%20Object%5D&originHeight=512&originWidth=570&size=0&status=done&style=none&width=285)
+![](https://imgkr.cn-bj.ufileos.com/9f572209-43a9-46b4-a729-acfb4e0f589a.png)
 
 
-![](https://cdn.nlark.com/yuque/0/2020/gif/123790/1587819778964-720e7093-082d-4350-a94e-a38e269017d2.gif#align=left&display=inline&height=140&margin=%5Bobject%20Object%5D&originHeight=279&originWidth=466&size=0&status=done&style=none&width=233)
+![](https://imgkr.cn-bj.ufileos.com/54137283-c38d-4bb8-b7ca-72e12ecc193c.gif)
 
 
 #### 使用Vuex
@@ -263,7 +263,7 @@ changeLang () {
 效果如下： 刷新页面也会保留选择的语言。成功
 
 
-![](https://cdn.nlark.com/yuque/0/2020/gif/123790/1587819778990-179cb0a7-fc68-44a1-9b1e-62bb9f708b19.gif#align=left&display=inline&height=196&margin=%5Bobject%20Object%5D&originHeight=780&originWidth=466&size=0&status=done&style=none&width=117)
+![](https://imgkr.cn-bj.ufileos.com/14f28407-74d9-494b-b701-18b089d7a402.gif)
 
 
 - 更换主题 （借助 colorui 样式）
@@ -273,7 +273,7 @@ changeLang () {
 先看下流弊的 colorui 颜色， 直接实现了背景色和字体颜色，再次感谢大佬的付出。具体颜色大家可以查看 main.css 中的 `.bg-`样式
 
 
-![](https://cdn.nlark.com/yuque/0/2020/jpeg/123790/1587819778960-3bd81a91-3a28-433e-841f-60b093aeba99.jpeg#align=left&display=inline&height=308&margin=%5Bobject%20Object%5D&originHeight=2280&originWidth=1080&size=0&status=done&style=none&width=146)
+![](https://imgkr.cn-bj.ufileos.com/8f589a32-5e67-45d4-8663-1b56b8d797a9.jpeg)
 
 
 在index目录创建 `theme.js`存放我们的颜色，格式如下。 （大家可以根据自己的喜好再添加）
@@ -463,13 +463,13 @@ Vue.mixin({
 见证奇迹：  （模态框中的颜色随机改变，主题色也更改成功）
 
 
-![](https://cdn.nlark.com/yuque/0/2020/gif/123790/1587819778954-bc6ddbbc-62b9-4d38-955c-c83dbc8b624c.gif#align=left&display=inline&height=182&margin=%5Bobject%20Object%5D&originHeight=723&originWidth=466&size=0&status=done&style=none&width=117)
+![](https://imgkr.cn-bj.ufileos.com/87b7ea24-88ca-4c61-8241-49c14f9ba02c.gif)
 
 
 本节的主体功能都实现了。大家可以申请appid（不会的可百度查找教程），使用二维码扫描，手机预览 （右上角三个点可以进入开发调试，vConsole可以查看真机打印调试）
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1587819778997-fdc08511-9641-4e2c-ae04-7ca8937b00aa.png#align=left&display=inline&height=269&margin=%5Bobject%20Object%5D&originHeight=727&originWidth=625&size=0&status=done&style=none&width=231)
+![](https://imgkr.cn-bj.ufileos.com/45183572-17c2-4c48-930e-060650948a8c.png)
 
 
 > **成功**
@@ -508,26 +508,26 @@ wx.navigateToMiniProgram({
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/jpeg/123790/1587819778943-ecfd7575-90e3-4499-be66-49691430e9fe.jpeg#align=left&display=inline&height=441&margin=%5Bobject%20Object%5D&originHeight=2280&originWidth=1080&size=0&status=done&style=none&width=209)
+![](https://imgkr.cn-bj.ufileos.com/cbaa9a91-2935-4735-a029-a1523ec3f24f.jpeg)
 
 
-![](https://cdn.nlark.com/yuque/0/2020/jpeg/123790/1587819779003-b2170548-d352-4ce5-bf2c-ac3cef1e69f9.jpeg#align=left&display=inline&height=443&margin=%5Bobject%20Object%5D&originHeight=2280&originWidth=1080&size=0&status=done&style=none&width=210)
+![](https://imgkr.cn-bj.ufileos.com/f2f78972-914f-414f-84de-6ffd789f16d1.jpeg)
 
 
-![](https://cdn.nlark.com/yuque/0/2020/jpeg/123790/1587819779015-87dfa5a4-5605-4b65-9d2a-a6240a834ead.jpeg#align=left&display=inline&height=429&margin=%5Bobject%20Object%5D&originHeight=2280&originWidth=1080&size=0&status=done&style=none&width=203)
+![](https://imgkr.cn-bj.ufileos.com/4cac4e6a-63e0-4b9a-9488-848d45a8164e.jpeg)
 
 
 - 获取页面路径 (登陆自己的小程序)
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1587819778933-90ebe621-3f95-4174-9ef5-0a81f8d90d53.png#align=left&display=inline&height=158&margin=%5Bobject%20Object%5D&originHeight=158&originWidth=308&size=0&status=done&style=none&width=308)
+![](https://imgkr.cn-bj.ufileos.com/39740689-fcdf-4d9d-a8b0-710b2bc5dcb3.png)
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1587819779020-5bcaf98e-46c5-4bcc-b1fb-b9f08c6c08ba.png#align=left&display=inline&height=185&margin=%5Bobject%20Object%5D&originHeight=609&originWidth=1020&size=0&status=done&style=none&width=309)
+![](https://imgkr.cn-bj.ufileos.com/5616d379-5612-4f91-a609-d5f0748acc23.png)
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1587819779008-53f1cb9b-0c2e-4dc6-b486-1b95102a6b5e.png#align=left&display=inline&height=178&margin=%5Bobject%20Object%5D&originHeight=473&originWidth=1027&size=0&status=done&style=none&width=387)
+![](https://imgkr.cn-bj.ufileos.com/3e588f8d-5d78-4e41-8cb6-72000e0e6db6.png)
 
 
 - 配置 源码视图
@@ -560,7 +560,7 @@ wx.navigateToMiniProgram({
 ## 登录界面
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576759-07a7508d-b424-4a7a-bb49-91adebe9acca.png#align=left&display=inline&height=318&margin=%5Bobject%20Object%5D&originHeight=398&originWidth=275&size=0&status=done&style=none&width=220)
+![](https://imgkr.cn-bj.ufileos.com/197e7c7f-bef3-4fc6-8095-0161a63b85e1.png)
 
 
 - 我们开发uni-app的工具是HbuilderX，在 pages 文件夹右键新建页面 ，取名login，这时会生成 `/pages/login/login.vue`， 会自动在 pages.json 文件中添加 如下： （新增的文件会放在 pages 数组最后）
@@ -843,14 +843,14 @@ exports.main = async (event, context) => {
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576815-8d0d3c3f-696f-495a-99a3-c37fa023e300.png#align=left&display=inline&height=333&margin=%5Bobject%20Object%5D&originHeight=333&originWidth=1194&size=0&status=done&style=none&width=1194)
+![](https://imgkr.cn-bj.ufileos.com/dd466e4b-d010-4253-a5ec-454211ef251f.png)
 
 
 - 右键cloudfunctions-aliyun 文件夹选择你创建的云服务空间，再user云函数上右键上传并运行；一方面可以上传，一方面可以检测 函数中是否有错误。刷新web控制台，可以发现上传成功：
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576769-f75ab483-4ad6-4535-9825-0516977d4ae2.png#align=left&display=inline&height=93&margin=%5Bobject%20Object%5D&originHeight=93&originWidth=922&size=0&status=done&style=none&width=922)
+![](https://imgkr.cn-bj.ufileos.com/a4d1d2a1-e9bd-4131-827d-f116f5a448b5.png)
 
 
 ```javascript
@@ -862,14 +862,14 @@ async onLoad() {
 ```
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576808-7f17b27d-514e-4184-9d5b-58772f3a4b53.png#align=left&display=inline&height=110&margin=%5Bobject%20Object%5D&originHeight=110&originWidth=449&size=0&status=done&style=none&width=449)
+![](https://imgkr.cn-bj.ufileos.com/295b5c97-b602-4f61-b4a4-0b3b94de5ae4.png)
 
 
 - 右键db_init.json 文件，初始化云数据库，同样刷新web控制台，发现初始化成功，当然在编译器的控制台也有相关输出（云数据库的操作都可以web 端操作，创建，删除，新增等）
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576813-53f84190-d212-44f6-9fa6-aa9468f31661.png#align=left&display=inline&height=216&margin=%5Bobject%20Object%5D&originHeight=216&originWidth=597&size=0&status=done&style=none&width=597)
+![](https://imgkr.cn-bj.ufileos.com/48375281-a096-4b76-a782-741a8ee27e36.png)
 
 
 ### 前端请求
@@ -904,7 +904,7 @@ async login() {
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576854-df98971f-2daa-4267-bfac-dfd9291550ef.png#align=left&display=inline&height=106&margin=%5Bobject%20Object%5D&originHeight=106&originWidth=488&size=0&status=done&style=none&width=488)
+![](https://imgkr.cn-bj.ufileos.com/8a9461a9-4de9-47e8-9ae0-40b4525cc608.png)
 
 
 ### 登录云函数
@@ -914,7 +914,7 @@ async login() {
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576842-62c5d26f-047d-4738-93ae-a44a610534b9.png#align=left&display=inline&height=431&margin=%5Bobject%20Object%5D&originHeight=431&originWidth=828&size=0&status=done&style=none&width=828)
+![](https://imgkr.cn-bj.ufileos.com/c9af7437-1d02-4ab6-81ec-4f1ffd5a6bef.png)
 
 
 ```javascript
@@ -949,7 +949,7 @@ exports.main = async (event, context) => {
 输入初始化的admin，admin，成功
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576840-f671a425-3a66-442b-8c82-182968c6f897.png#align=left&display=inline&height=166&margin=%5Bobject%20Object%5D&originHeight=166&originWidth=186&size=0&status=done&style=none&width=186)
+![](https://imgkr.cn-bj.ufileos.com/712674b2-b81f-4e25-9103-baf7ec516fd3.png)
 
 
 ### 微信openid登录
@@ -1008,7 +1008,7 @@ exports.main = async (event, context) => {
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576872-be69dff6-9959-4511-844d-17d5a80d614a.png#align=left&display=inline&height=92&margin=%5Bobject%20Object%5D&originHeight=92&originWidth=344&size=0&status=done&style=none&width=344)
+![](https://imgkr.cn-bj.ufileos.com/626265e5-1066-4ec5-bcfe-01160d454ade.png)
 
 
 点击微信登录按钮会显示用户名或密码错误，因为我们没有在user 云函数中做判断。修改user云函数 （点击微信登录，发现登录成功）
@@ -1063,7 +1063,7 @@ exports.main = async (event, context) => {
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576825-e0e3ee4a-09d8-4f1c-b2d9-7320f4dee981.png#align=left&display=inline&height=232&margin=%5Bobject%20Object%5D&originHeight=232&originWidth=527&size=0&status=done&style=none&width=527)
+![](https://imgkr.cn-bj.ufileos.com/7d5a6e42-ea0b-485a-b413-bb3aac106786.png)
 
 
 
@@ -1372,7 +1372,7 @@ user = await collection.where({
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576898-fac3fa9d-ae8f-4f7e-8c32-f51baad8e917.png#align=left&display=inline&height=101&margin=%5Bobject%20Object%5D&originHeight=101&originWidth=442&size=0&status=done&style=none&width=442)
+![](https://imgkr.cn-bj.ufileos.com/bcd1841d-cc26-409e-86cc-b922dec06c5d.png)
 
 
 - 使用腾讯云开发的朋友，感兴趣可以去尝试使用token 认证  [云token](https://uniapp.dcloud.io/uniCloud/authentication)
@@ -1443,7 +1443,7 @@ user = await collection.where({
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576855-2ce0224e-b5de-46a5-bfb1-003aadfb691e.png#align=left&display=inline&height=437&margin=%5Bobject%20Object%5D&originHeight=524&originWidth=321&size=0&status=done&style=none&width=268)
+![](https://imgkr.cn-bj.ufileos.com/6e3bc840-5a4c-4f15-bb2f-54cdb8d22edd.png)
 
 
 可以看到遮罩层无法覆盖底部导航，我们可以隐藏底部导航
@@ -1461,7 +1461,7 @@ uni.showTabBar()
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576914-74d7fb56-7143-4dfd-804b-82fa0e755d0e.png#align=left&display=inline&height=211&margin=%5Bobject%20Object%5D&originHeight=211&originWidth=312&size=0&status=done&style=none&width=312)
+![](https://imgkr.cn-bj.ufileos.com/9c2d654f-9c0c-4c25-8f77-4cc10ac64f6e.png)
 
 
 - 简单使用 colorui 中的底部导航 （布局在 colorui 原项目的 `pages/component/bar.vue`中）
@@ -1498,7 +1498,7 @@ uni.showTabBar()
 ```
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576909-ad1706b9-a3e9-4ca1-a856-263881191ece.png#align=left&display=inline&height=121&margin=%5Bobject%20Object%5D&originHeight=121&originWidth=307&size=0&status=done&style=none&width=307)
+![](https://imgkr.cn-bj.ufileos.com/dfeeb1b0-4676-4885-b42a-93c5e1d518c8.png)
 
 
 ### 底部导航国际化
@@ -1572,7 +1572,7 @@ Vue.component('cu-custom', cuCustom)
 界面样式如下：
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576863-3a305384-b610-4d70-a10b-36546bf28dfd.png#align=left&display=inline&height=73&margin=%5Bobject%20Object%5D&originHeight=73&originWidth=334&size=0&status=done&style=none&width=334)
+![](https://imgkr.cn-bj.ufileos.com/85536ef3-2b18-42f2-ac17-77699298386a.png)
 
 
 这是因为我们没有获取到导航条的高度，在 app.vue 中引入
@@ -1611,10 +1611,10 @@ onLaunch: function() {
 
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576861-ff9cffbe-11eb-4405-8727-84eb9f9ae86d.png#align=left&display=inline&height=65&margin=%5Bobject%20Object%5D&originHeight=65&originWidth=316&size=0&status=done&style=none&width=316)
+![](https://imgkr.cn-bj.ufileos.com/c1681d3c-20ed-4b22-8680-4d36d8a67fe8.png)
 
 
-![](https://cdn.nlark.com/yuque/0/2020/png/123790/1588417576860-467dbd6d-22b4-4dab-98a1-83104eaf95b1.png#align=left&display=inline&height=90&margin=%5Bobject%20Object%5D&originHeight=90&originWidth=311&size=0&status=done&style=none&width=311)
+![](https://imgkr.cn-bj.ufileos.com/b14017e7-3983-4e1a-86cf-56211e70cc34.png)
 
 
 - 把上一节的代码放入 my 页面里，自定义导航条也引入
@@ -1697,7 +1697,7 @@ button{
 ```
 
 
-![](https://cdn.nlark.com/yuque/0/2020/gif/123790/1588417576925-26a8081f-8626-48c0-8cde-5f1804f8d95b.gif#align=left&display=inline&height=492&margin=%5Bobject%20Object%5D&originHeight=492&originWidth=345&size=0&status=done&style=none&width=345)
+![](https://imgkr.cn-bj.ufileos.com/99a8ce3b-9416-40ff-910a-730392eec3f0.gif)
 
 
 - 如果大家不想使用自定义的导航条，使用自带的导航条也可以 api 如下
