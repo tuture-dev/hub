@@ -68,10 +68,6 @@
     {
       "name": "justauth-tutorial",
       "git": "https://gitee.com/yadong.zhang/justauth-tutorial.git"
-    },
-    {
-      "name": "uni-app-tutorial",
-      "git": "https://github.com/Bluestar123/testt.git"
     }
   ]
 }
