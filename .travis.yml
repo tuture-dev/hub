@@ -19,7 +19,7 @@ env:
   - ID_DIGITS=7
 
 before_script:
-  - npm i -g tuture@latest
+  - npm i -g @tuture/cli
 
 script:
   - yarn
