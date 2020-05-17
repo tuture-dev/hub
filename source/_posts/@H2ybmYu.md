@@ -2,7 +2,7 @@
 title: "uni-app结合云函数开发小程序博客（一）：环境搭建、云函数实现登录/注册"
 description: "uni-app 是一个使用 Vue.js 开发的跨平台应用的前端框架，开发者编写一套代码，可发布到iOS、Android、H5、以及各种小程序（微信/支付宝/百度/头条/QQ/钉钉/淘宝）、快应用等多个平台；uni在跨端的同时，通过条件编译和对应平台特有API地调用，可以很好得为某个平台写个性化的代码、调用其独有能力而不影响其它平台；生态丰富，支持npm包管理，丰富的第三方SDK集成和高达1600个插件的支持；上手容易，采用vue语法和微信小程序api，无额外学习成本，同时开发利器HbuilderX具有强大的语法提示。相信它将是你跨端开发的不二选择。"
 tags: ["uni-app"]
-categories: ["前端", "uni-app", "入门"]
+categories: ["小程序", "uni-app", "入门"]
 date: 2020-05-02T00:00:00.509Z
 photos:
   - https://imgkr.cn-bj.ufileos.com/a9e76071-61d4-4cd1-8d9e-9197c827e1ba.jpg
