@@ -1,6 +1,6 @@
 ---
 title: "使用原生开发高仿瑞幸小程序（二）：使用云存储并实现轮播图"
-description: "使用 Vant 结合小程序云开发高仿瑞幸小程序，你值得拥有"
+description: "轮播图是我们常见的一种表现形式，通常，图片之间要做到无缝衔接循环需要花一些功夫，而小程序提供的组件就已经可以实现。可以说省去了开发者不少的时间。"
 tags: ["微信小程序"]
 categories: ["小程序", "原生微信小程序", "入门"]
 date: 2020-06-08T00:00:01.509Z
@@ -10,7 +10,7 @@ photos:
 
 <div class="profileBox">
   <div class="avatarBox">
-    <a href="https://github.com/gogoswift"><img src="/images/avatars/zwmxs.png" alt="" class="avatar"></a>
+    <a href="https://github.com/gogoswift"><img src="/images/avatars/zw.png" alt="" class="avatar"></a>
   </div>
   <div class="rightBox">
     <div class="infoBox">

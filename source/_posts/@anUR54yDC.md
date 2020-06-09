@@ -1,6 +1,6 @@
 ---
 title: "使用原生开发高仿瑞幸小程序（三）：完成 Layout 布局和为你推荐模块"
-description: "使用 Vant 结合小程序云开发高仿瑞幸小程序，你值得拥有"
+description: "这篇教程将继续进行原生小程序的开发，并手把手带你分析和实现 Layout 布局以及为你推荐模块"
 tags: ["微信小程序"]
 categories: ["小程序", "原生微信小程序", "入门"]
 date: 2020-06-08T00:00:02.509Z
@@ -10,7 +10,7 @@ photos:
 
 <div class="profileBox">
   <div class="avatarBox">
-    <a href="https://github.com/gogoswift"><img src="/images/avatars/zwmxs.png" alt="" class="avatar"></a>
+    <a href="https://github.com/gogoswift"><img src="/images/avatars/zw.png" alt="" class="avatar"></a>
   </div>
   <div class="rightBox">
     <div class="infoBox">

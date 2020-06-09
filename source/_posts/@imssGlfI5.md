@@ -1,6 +1,6 @@
 ---
 title: "使用原生开发高仿瑞幸小程序（四）：编写云函数并连接云数据库"
-description: "使用 Vant 结合小程序云开发高仿瑞幸小程序，你值得拥有"
+description: "通过云函数，我们将拥有编写服务端代码的能力。我们可以在服务端执行一些逻辑，可以上传图片，可以调用其他网络服务的api，可以对数据库进行操作。重要的是，云函数的编写相当简洁，便利。在这一节，我们将通过云函数获取“为你推荐”的产品数据，实现数据动态化。"
 tags: ["微信小程序"]
 categories: ["小程序", "原生微信小程序", "入门"]
 date: 2020-06-08T00:00:04.509Z
@@ -10,7 +10,7 @@ photos:
 
 <div class="profileBox">
   <div class="avatarBox">
-    <a href="https://github.com/gogoswift"><img src="/images/avatars/zwmxs.png" alt="" class="avatar"></a>
+    <a href="https://github.com/gogoswift"><img src="/images/avatars/zw.png" alt="" class="avatar"></a>
   </div>
   <div class="rightBox">
     <div class="infoBox">
