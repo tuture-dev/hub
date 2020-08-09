@@ -5,7 +5,7 @@ tags: ["微信小程序"]
 categories: ["小程序", "原生微信小程序", "入门"]
 date: 2020-06-08T00:00:04.509Z
 photos:
-  - https://imgkr.cn-bj.ufileos.com/1061d864-ead2-4f77-8ac6-73b3d6b0baca.png
+  - https://static.tuture.co/c/%40imssGlfI5/4.jpg
 ---
 
 <div class="profileBox">
@@ -38,15 +38,15 @@ photos:
 #### 一 创建第一个云函数
 如何创建云函数呢？我们这里通过“微信开发者工具”来完成云函数的创建和代码编写。
 首先，我们右键单击“cloudfunctions”，选择“新建Node.js云函数” 
-![](https://imgkr.cn-bj.ufileos.com/101867f9-3418-438e-a37b-823b6667e3e1.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106781962-af108c19-dba5-4adf-915d-b1acd8c7d49f.png)
 写上我们的函数名“client_home_get_best”，这时候，工具会为我们创建一个同名文件夹，文件夹下面有一些文件，如下图： 
-![](https://imgkr.cn-bj.ufileos.com/0eae8b34-3451-428f-878b-594080a27d3b.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106781918-4a9bc9b0-298f-46f8-8198-335ee188c4de.png)
 接下来我们要做的是安装wx-server-sdk依赖，怎么做呢？右键点击新建的云函数文件夹，选择“在终端打开”。
-![](https://imgkr.cn-bj.ufileos.com/484101f8-9175-44e0-8c27-9716ed5e4f2d.jpeg)
+![](https://static.tuture.co/c/@imssGlfI5/1591106781955-a93e3c81-fc6d-463f-8fd0-b04826424b0b.jpeg)
 在打开的终端中输入“npm install --save wx-server-sdk@latest” 敲下回车并等待依赖下载完成。如下图：
-![](https://imgkr.cn-bj.ufileos.com/1cb37ded-be92-45a0-b857-cfc78ab8f2f7.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106781952-9d429054-5dcb-4915-a219-cda69c955d23.png)
 当安装完依赖后，我们的云函数文件夹也起了变化。多了node_modules文件夹和package-lock.json文件。
-![](https://imgkr.cn-bj.ufileos.com/503cd877-7455-41a7-9ff8-a14f58ae3d5b.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106781993-f3ad6638-87ee-45c5-b24b-10fde9377b41.png)
 对于目前的我们来讲，只有index.js文件是最重要的，之后我们会在这个js文件中编写我们的代码。先来看看工具默认都生成了什么代码：
 
 ```javascript
@@ -121,7 +121,7 @@ exports.main = async (event, context) => {
 }
 ```
 当我们写完云函数之后，我们需要把云函数上传到云开发的服务器上。怎么做呢？其实也很简单，我们只需要右键单击云函数的文件夹，选择“上传并部署：云端安装依赖（不上传node_modules）”
-![](https://imgkr.cn-bj.ufileos.com/e2d1f569-2b98-43ad-b581-77b3d116a3ed.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106781936-6b0fce73-0913-430f-9646-8d120e61a039.png)
 至此我们就完成了云函数的编写，接下来我们需要对云函数进行调用。
 #### 二 调用云函数
 在小程序中，调用云函数是一件非常简单的事。我们只需要用过wx.cloud.callFunction即可。同时，小程序对云函数的调用是支持Promise风格的。什么是Promise？这对于js来说是个神器啊。我们有没有必要讲一下Promise，是有必要呢？还是有必要呢？
@@ -188,19 +188,19 @@ bindtap=“onGetBest"
 #### 一 创建集合
 集合的概念，顾名思义，就是同类数据的集合。例如我们有个产品的集合里面放的都是产品的数据。我们的“为你推荐”模块就是从产品集合里面随机读取4条数据。
 我们先来看看在开发者工具中如何创建集合。首先，点击“云开发” 
-![](https://imgkr.cn-bj.ufileos.com/1e3e2f97-9e4d-4687-9235-f4d2382d900f.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106853402-799d266b-ad6c-4b96-8ff1-376471fea6db.png)
 然后点击“数据库”，并通过点击“+”号，创建集合。 
-![](https://imgkr.cn-bj.ufileos.com/d8e56d16-f3b9-4926-9121-442dd19ca3f6.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106853439-b0e43008-fc2f-4134-90f7-7afb39b958fa.png)
 在弹出的窗口中输入集合的名称，这里我们输入products： 
-![](https://imgkr.cn-bj.ufileos.com/744e9901-a000-4009-93c7-243caa2f14b4.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106853469-5e92c5aa-00a8-4509-8561-0c9ebf10ef2e.png)
 点击“确定”，我们就能在左侧看到我们创建的集合了。
 #### 二 添加记录
 接下里我们来添加记录，先点击我们的集合“products”，再点击“添加记录按钮”。
-![](https://imgkr.cn-bj.ufileos.com/725e9ff9-71c2-4357-ab45-23ead5ec1a09.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106853459-8ecba59d-4a1e-487b-ac79-173a1afc15b4.png)
 在弹出窗口，我们可以通过加号按钮添加该条记录的属性及值。 
-![](https://imgkr.cn-bj.ufileos.com/0cc49518-8c53-4958-ae70-efc969db1431.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106853459-ecc2c7cc-e644-4379-a59c-4139d7db708e.png)
 我们以添加产品名为例。字段名输入“name”，类型选择string，值输入“陨石拿铁”。
-![](https://imgkr.cn-bj.ufileos.com/7a32d06f-3a40-4cb9-9793-b17dd272f307.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106853494-882a48b9-7aa4-4cc7-8557-1cbede2a44f3.png)
 对于我们来讲，一条产品的记录光有name是不够的。一共有以下这几个字段：
 
 ```javascript
@@ -213,12 +213,12 @@ categoryId：产品分类id
 ```
 其中image和categoryId暂时用不着，但我们预留着。
 除了手动一条一条的添加记录之外，我们还可以批量导入数据。在我们点击集合名称“products”之后，我们选择“导入”按钮 
-![](https://imgkr.cn-bj.ufileos.com/6ee8162d-cfff-4693-87c1-68fd34e7cbb7.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106853474-a52e1a4e-1778-4eec-b62d-578f360f896a.png)
 在打开的窗口中点击“选择文件”， 
-![](https://imgkr.cn-bj.ufileos.com/27140d92-95d1-4fca-bff4-14334c0c9514.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106853446-c10371a6-a557-45ac-9857-27a1fbb1ce7d.png)
 找到我们的json文件（该文件我会在源代码中提供）：
 完成导入后我们就能看到我们导入的数据了： 
-![](https://imgkr.cn-bj.ufileos.com/8e1e2cc2-0f87-45c4-a85d-d52b770d073e.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106853707-da70e9c7-38e4-4b74-be1b-31107f569693.png)
 我们来简单分析一下导入的数据。也就是我们的products.json文件。它虽然是以json结尾，但是又和我们平时接触的json不太一样。那我们就来做一个对比。普通的json文件如下
 
 ```javascript
@@ -293,7 +293,7 @@ data: data.list,
 }
 ```
 当我们写完index.js的代码，记得要将云函数的代码上传到云服务器上。怎么做呢？如下：
-![](https://imgkr.cn-bj.ufileos.com/13f84685-127d-4723-8734-e0fb59e774b2.png)
+![](https://static.tuture.co/c/@imssGlfI5/1591106853471-f78cf8ef-c755-4d74-ba71-03c0b4177905.png)
 
 
 完整代码我放在了github上，地址是：

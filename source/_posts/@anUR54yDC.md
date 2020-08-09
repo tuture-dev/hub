@@ -5,7 +5,7 @@ tags: ["微信小程序"]
 categories: ["小程序", "原生微信小程序", "入门"]
 date: 2020-06-08T00:00:02.509Z
 photos:
-  - https://imgkr.cn-bj.ufileos.com/2438aed7-64a8-41e6-af39-5a5c166e2d55.png
+  - https://static.tuture.co/c/%40anUR54yDC/3.jpg
 ---
 
 <div class="profileBox">
@@ -31,7 +31,7 @@ photos:
 {% endnote %}
 
 今天，我们来绘制如下的界面
-![](https://imgkr.cn-bj.ufileos.com/9c9a6525-2c04-4262-87ce-d6aa0aad2689.png)
+![](https://static.tuture.co/c/@anUR54yDC/1591020489335-7da879f9-f162-42a1-99f5-88d18ba00e8f.png)
 要实现以上布局，我们需要学习以下三块内容
 
 > 1 通过图片的宽度计算出图片的高度
@@ -41,26 +41,26 @@ photos:
 #### 一 分析布局
 看看我们要实现的布局，横平竖直，方方正正，比例匀称。其实这是非常容易实现的。我们将要用到vant组件库的layout布局系统。我们可以通过其中的row来实现横向布局。使用col实现竖向布局。row和col搭配起来，就能完成我们今天的布局了。
 首先我们来分析一下布局，我们可以把整个布局分为上下两个row，如下：
-![](https://imgkr.cn-bj.ufileos.com/41203992-1321-474f-ba6d-dc20fab3a466.jpeg)
+![](https://static.tuture.co/c/@anUR54yDC/1591020489339-cbaa7584-9e4c-446c-ab73-92dacd00e316.jpeg)
 ok，接下来，我们再用col填充row，如下图：
-![](https://imgkr.cn-bj.ufileos.com/2b78d7ab-9404-40c9-8322-8fa0d0ab967f.jpeg)
+![](https://static.tuture.co/c/@anUR54yDC/1591020489259-10e63641-92c4-46e0-9d38-820be9a0e444.jpeg)
  最后一步是什么呢？我们在每个col之中放入image组件即可。
-![](https://imgkr.cn-bj.ufileos.com/2c7f27c7-dab2-4343-9083-d6cd44def9b9.jpeg)
+![](https://static.tuture.co/c/@anUR54yDC/1591020489317-6461e10d-9b02-44d2-ba12-9083c5f5fe82.jpeg)
 至此，我们就完成了布局的分析。为什么要用row和col？因为它们有个非常厉害的属性span。利用这个属性，我们能实现按比例布局。怎么个按比例法呢？在vant的layout系统中，横向被分为24分。如果要在row中放两个一样大小的col，只需要将将col的span设为24 / 2 = 12。以此类推，如果要放三个一样宽的col，只需要将每个col的span设为24 / 3 = 8。这就实现了我们第二个row的布局。
 现在我们来分析一下第一个row怎么布局。我们通过观察可知，第一个Row中有两个col，他们的比例是2:1，所以第一个col的span为 （24 / 3）* 2 = 16，第二个col的span为 24 / 3 = 8 。这样就实现了2:1的布局。
 #### 二 通过图片的宽度计算出图片的高度
 我们需要六张图片，把它们放在云存储中。图片资源我放在了github中，github的地址会在文章末尾放出。在这里，它们的地址是： 
-![](https://imgkr.cn-bj.ufileos.com/e52ec4bf-e827-41f1-92ae-a7ee45ed66ac.png)
+![](https://static.tuture.co/c/@anUR54yDC/1591020489321-006d2bbf-73f4-40f2-b0cb-f0e2d0869e39.png)
 cloud://myluckin-unux5.6d79-myluckin-unux5-1302022060/images/home/01.png 
-![](https://imgkr.cn-bj.ufileos.com/68119384-d842-477d-adc7-2ad8e3e3c0aa.png)
+![](https://static.tuture.co/c/@anUR54yDC/1591020489279-dbd7919a-4a13-4284-be2a-af346edf536e.png)
 cloud://myluckin-unux5.6d79-myluckin-unux5-1302022060/images/home/02.png 
-![](https://imgkr.cn-bj.ufileos.com/6490c7a6-324c-49b6-b2e8-5e16174c66d0.png)
+![](https://static.tuture.co/c/@anUR54yDC/1591020489275-133c0f6c-6a11-4b94-8d3b-877966bf5e7a.png)
 cloud://myluckin-unux5.6d79-myluckin-unux5-1302022060/images/home/03.png 
-![](https://imgkr.cn-bj.ufileos.com/3ddebe36-aefb-451a-81b2-3ba0f24fbfe9.png)
+![](https://static.tuture.co/c/@anUR54yDC/1591020489275-12a907b7-5956-4703-8460-a59e84d47ebe.png)
 cloud://myluckin-unux5.6d79-myluckin-unux5-1302022060/images/home/04.png 
-![](https://imgkr.cn-bj.ufileos.com/63deb1c4-79b6-44ed-80b5-3696286312f4.png)
+![](https://static.tuture.co/c/@anUR54yDC/1591020489331-d17beac8-e2ca-44a6-9ac8-a08e70e3c8fb.png)
 cloud://myluckin-unux5.6d79-myluckin-unux5-1302022060/images/home/05.png 
-![](https://imgkr.cn-bj.ufileos.com/f10d493d-6483-47ed-9927-47ffc5bb5a0a.png)
+![](https://static.tuture.co/c/@anUR54yDC/1591020489297-fa262a69-788e-45e7-8a95-ace1773f963e.png)
 cloud://myluckin-unux5.6d79-myluckin-unux5-1302022060/images/home/06.png
 让我们来想想，要完成布局我们需要知道什么？我们知道屏幕宽度，知道图片左右边距，知道图片之间的距离，知道图片之间的比例，那么我们就知道了图片的宽度。所以我们需要通过计算获得图片在屏幕上的高度。
 为了让图片不变形，图片在屏幕上的高宽比要等于图片真实的高宽比，这就是我们计算的基础。
@@ -204,19 +204,19 @@ const rowHeight2 = rowWidth2 * 315/324
 > 2 编写静态数据
 > 3 绑定数据，循环渲染
 
-![](https://imgkr.cn-bj.ufileos.com/d4ab0135-b74b-485b-9704-73cd31a7a22b.png)
+![](https://static.tuture.co/c/@anUR54yDC/1591020758483-72a9b420-b5e9-48de-8e01-bfbe0bbfd14e.png)
 #### 一 我们来分析一下布局
 我们可以看出，这个模块由上下两个row组成 
-![](https://imgkr.cn-bj.ufileos.com/061e55f7-0343-44d3-a3ff-1ab613c27b13.jpeg)
+![](https://static.tuture.co/c/@anUR54yDC/1591020758489-7dd6ffed-cc12-49b5-9517-8bdb68972626.jpeg)
 我们来分析一下，上面的row由三个col组成。第二个col利用offset属性，与第一个col拉开了距离。如下图： 
-![](https://imgkr.cn-bj.ufileos.com/72e19e0b-9416-452f-ab64-0abd889023b0.jpeg)
+![](https://static.tuture.co/c/@anUR54yDC/1591020758439-00abbb64-c683-446f-a0ac-0d2090f45879.jpeg)
 略微复杂的是下面的row，等分城了4个col。 
-![](https://imgkr.cn-bj.ufileos.com/f20e16b1-7beb-44a7-b942-f089ddaa174a.jpeg)
+![](https://static.tuture.co/c/@anUR54yDC/1591020758514-c63348ac-2ad2-4b68-a66f-181685fec86c.jpeg)
 现在我们来分析单个col。我们知道，在col中，元素是从上而下布局的。所以从上到下，依次为image，view。下面的价格由于我们要用到横向布局，所以是一个row，如下图： 
-![](https://imgkr.cn-bj.ufileos.com/80435536-674b-4776-bb7c-ec632ebf9bdd.jpeg)
+![](https://static.tuture.co/c/@anUR54yDC/1591020758451-92c91737-88ed-410e-b133-67cdca549791.jpeg)
 让我们来重点分析一下最下面的row的布局。我用了三个col，第一个col用来放价格，第二个是加号按钮，第三个col实现的是右编剧。他们的比例分别是18:4:2 
 我们知道col是垂直布局，所以放置价格的col中我们会放入两个view。我比较喜欢在view中放文字。
-![](https://imgkr.cn-bj.ufileos.com/169efa56-b8c1-4b99-aae0-1d8f26d0f5c9.jpeg)
+![](https://static.tuture.co/c/@anUR54yDC/1591020758458-c4ac21f3-819f-4a3f-9bf0-2f6498751113.jpeg)
 至此，我们就完成了布局的分析。
 #### 二 静态数据
 “为你推荐”模块的数据是从云数据库中读取的，只不过在这一节中，我们将先采用静态数据模拟一下。我们该怎么写静态数据呢？

@@ -5,7 +5,7 @@ tags: ["微信小程序"]
 categories: ["小程序", "原生微信小程序", "入门"]
 date: 2020-06-08T00:00:01.509Z
 photos:
-  - https://imgkr.cn-bj.ufileos.com/0062a2e2-570c-479e-81df-89633e229ff7.png
+  - https://static.tuture.co/c/%40eWKc0vcpD/2.jpg
 ---
 
 <div class="profileBox">
@@ -39,17 +39,17 @@ photos:
 
 #### 一 云存储的使用
 让我们一步一步的来，首先我们需要给小程序的首页创建一个背景。如下图 
-![](https://imgkr.cn-bj.ufileos.com/8ad27171-9e51-4ab8-b86d-77bcc1827577.png)
+![](https://static.tuture.co/c/@eWKc0vcpD/1590064651583-ad298e93-658b-4268-97fc-d6d0facb48a2.png)
 在这里，背景图片我放到了云存储上。要知道，当我们创建小程序后，我们有5G存储空间和5G的流量可以免费使用。这足够我们开发使用了。
 那么，怎么把背景图图片放到云存储上呢？我们在微信开发者工具的顶部找到“云开发”按钮。
-![](https://imgkr.cn-bj.ufileos.com/91338879-a4bf-4724-89dd-10a27300ffe8.png)
+![](https://static.tuture.co/c/@eWKc0vcpD/1590064652039-90fa8794-72ea-475d-82f2-4a8485649868.png)
 这时候，我们会打开“云开发控制台”。我们再点击“存储”按钮，就来到了云存储的管理界面。如下图
-![](https://imgkr.cn-bj.ufileos.com/b98b77ec-c161-4d8b-888f-6b1130ad7f6c.png)
+![](https://static.tuture.co/c/@eWKc0vcpD/1590064651922-f1606369-b548-45f7-8007-01a47df205d5.png)
 我们可以通过“新建文件夹”来进行分类管理。想我，我就创建了“images”文件夹，同时在images文件夹下面根据Tabbar又创建了。“home”，“menu”，“cart”，“order”和“my”五个文件夹。
 因为我们现在在创建首页嘛，所以我会把首页下的相关图片都放在home文件夹下。云存储不仅能存图片，还能存放其他文件，这里就不细讲了。
 我们可以点击“上传文件”按钮，将今天所需的图片素材，传到云存储上。我将背景图和今天轮播图所需的图片都传到了“images/home”文件夹下。
 我们的image组件能直接使用File ID，省却了地址转换的麻烦。File ID的地址如下图所示。 
-![](https://imgkr.cn-bj.ufileos.com/a2c2d1a3-d1a5-4a1d-aadd-2f7acfd32936.png)
+![](https://static.tuture.co/c/@eWKc0vcpD/1590064651569-da29f500-7b08-4619-acd2-dc14eb27d32d.png)
 上图红框所标示的地址就是我们背景图片的地址，让我们复制一下，接下来马上就会用到。
 #### 二 利用image组件创建背景
 接下来，我们需要使用的是image组件，我们将通过改变它的z坐标将它放置在其他组件的“下面”，这样就变成了home页面的背景了。为什么不用css中的background-image呢？因为这个属性必须使用网络图片或者base64图片。而我们的云存储的File ID地址必须要转换一下才能获得真实地址，所以太麻烦，不如直接用image来的快。
@@ -84,7 +84,7 @@ photos:
 ```
 z-index就是我们所说的z坐标了。什么是z坐标呢，我们知道横轴是x坐标，竖轴是y坐标。xy组成了一个平面，也就是我们的手机屏幕。那么垂直与手机屏幕的就是z坐标。z坐标的值越小，就在越后面，也就会被挡住。那么当我们把z-index设为-100的时候，image就位于其他组件的下方了。
 很好，如果一切正确，将会看到如下画面。
-![](https://imgkr.cn-bj.ufileos.com/334e59eb-e67f-4efd-87b3-a01318ccf5c5.png)
+![](https://static.tuture.co/c/@eWKc0vcpD/1590064651546-5a230e43-5c84-40bd-a054-68ab4d9907fe.png)
 这和我们所期望的效果有些不一样？我们期待的效果是没有顶部的navigation的对不对？不要着急，接下来我们就来解决这个问题。
 #### 三 简单自定义navigation
 其实要让顶部的navigation消失非常简单，我们只需要打开“pages/home/home.json”，添加
@@ -93,7 +93,7 @@ z-index就是我们所说的z坐标了。什么是z坐标呢，我们知道横�
 "navigationStyle": “custom",
 ```
 即可，这行代码的意思就是，我们将使用自定义的navigation。我们只要什么都不做，就让将默认的navigarion消失了。如下图所示
-![](https://imgkr.cn-bj.ufileos.com/52389ea6-6a76-44eb-87a8-8acfb82c2775.png)
+![](https://static.tuture.co/c/@eWKc0vcpD/1590064651586-b850bc1e-d9ba-469b-b973-ec8de76b9fbe.png)
 至于如何自定义复杂的navigation，这就不是本节的内容了。
 #### 四 创建轮播图
 如何创建轮播图呢？答案是，使用小程序提供的swiper组件。使用swiper组件，一切都将变得非常的简单。
@@ -166,7 +166,7 @@ swiper-item 标签仅可放在swiper标签中，宽高自动设置为100%。我�
 <image src="{item}}" mode="widthFix"></image>
 ```
 此时，在我们的微信开发者工具的模拟器中，我们看到的是酱婶的：
-![](https://imgkr.cn-bj.ufileos.com/f6573ce4-8272-4e42-91a7-e33b33cd0fa6.png)
+![](https://static.tuture.co/c/@eWKc0vcpD/1590064651651-c0270d09-fc2a-4463-9837-9685e25e3f4f.png)
 我们发现，轮播图的位置距离顶部太近了，我们至少要把状态栏和标题栏空出来。
 状态栏和标题栏的高度，我们可以通过系统动态获取。所以我们组件home.js中，预留两个属性
 `statusBarHeight: 0,`
@@ -210,7 +210,7 @@ attached() {
 ```
 大家注意到，我们在计算titleBarHeight的时候，调用了wx.getMenuButtonBoundingClientRect这个api，这是什么呢？这个api能获取微信右上角胶囊按钮的布局信息。
 好有一个新的知识点需要学习一下，就是在组件中，attached函数是干嘛的？这是组件生命周期的一个函数，当在组件实例进入页面节点树时就会执行，在我们的实例中，我们正是利用这个函数给我们的组件的顶边距赋值的。让我们看看最后的效果图吧
-![](https://imgkr.cn-bj.ufileos.com/fc39d3fb-95bc-4bf7-8bec-1880ad233282.png)
+![](https://static.tuture.co/c/@eWKc0vcpD/1590064672123-8a2a10a2-39c2-4c48-b1a2-78625fc0ff1d.png)
 
 ## 小程序的全局数据
 
@@ -223,7 +223,7 @@ attached() {
 那么，为什么要使用全局数据？我们试想一下，如果有些数据所有界面都要用呢，该怎么办？一个页面一个页面的传会不会太麻烦了？
 我们就在首页中尝试着使用一下全局数据。
 我们在小程序的项目文件中能看到app.js这个文件。 
-![](https://imgkr.cn-bj.ufileos.com/71e842fe-2600-4d87-bf79-aaa869fbd95c.png)
+![](https://static.tuture.co/c/@eWKc0vcpD/1590064696329-b5e34c5c-3b44-448f-9c14-92e00152d72a.png)
 这个文件用来干什呢？是用来注册小程序用的，同时小程序的一系列事件都会在这个文件里得到响应。例如小程序初始化了，小程序前后台切换，还有就是可以用来存储一些全局数据。
 重要的是，整个小程序只会有一个app.js的实例。这也是为什么它适合用来存储全局数据。
 怎么存放呢？我们注意到app.js中有这么一行代码
@@ -300,7 +300,7 @@ const winWidth = 750
 const swiperHeight = (winWidth - 40 ) * 540/1065
 ```
 计算完后，别忘了使用setData更新swiperHeight的值。这下，轮播图的显示终于完美。 
-![](https://imgkr.cn-bj.ufileos.com/1ec3153d-10cd-479e-a4b7-33d0c96355f6.png)
+![](https://static.tuture.co/c/@eWKc0vcpD/1590065279213-5ce25feb-b34f-4c87-93f2-bfa16fce8610.png)
 为了让swiper 和image组件在不同的屏幕下都能撑满，最好给它们都加上如下样式
 
 ```css
