@@ -66,10 +66,6 @@
       "git": "https://github.com/tuture-dev/jd-miniprogram.git"
     },
     {
-      "name": "justauth-tutorial",
-      "git": "https://gitee.com/yadong.zhang/justauth-tutorial.git"
-    },
-    {
       "name": "koa-quickstart",
       "git": "https://github.com/tuture-dev/koa-quickstart.git"
     }
