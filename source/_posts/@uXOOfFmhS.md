@@ -5,7 +5,7 @@ tags: ['Nest.js']
 categories: ['后端', 'Node.js', '进阶']
 date: 2020-05-12T00:05:00.509Z
 photos:
-  - https://imgkr.cn-bj.ufileos.com/d9dfdbe6-116d-492f-bd11-0e2dfed65592.png
+  - https://static.tuture.co/c/%40uXOOfFmhS/6.jpg
 ---
 
 <div class="profileBox">
@@ -42,7 +42,7 @@ RBAC 模型可以分为：RBAC 0、RBAC 1、RBAC 2、RBAC 3 四种。
 
 一般情况下，使用 RBAC 0 模型就可以满足常规的权限管理系统设计了。
 
-![](https://imgkr.cn-bj.ufileos.com/c31de573-dd36-46d9-ad9b-3d07424e4756.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795143-9d5f6ad5-475f-4330-93d7-663b0d7be51a.webp)
 
 #### 2.2 RBAC 1
 
@@ -66,7 +66,7 @@ RBAC 模型可以分为：RBAC 0、RBAC 1、RBAC 2、RBAC 3 四种。
 由于是入门教程，这里只演示 RBAC 0 模型的实现，即一个用户只能有一种角色，不存在交叉关系。
 正所谓：道生一，一生二，二生三，三生万物。学会 RBAC 0 之后，相信读者们一定能结合概念，继续扩展权限系统的。
 其实 RBAC 0 实现起来非常简单，简单到核心代码都不超过 15 行。
-![](https://imgkr.cn-bj.ufileos.com/17797cc5-b8ac-49aa-ac3c-f8c7a49a65fe.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795133-4ae9f836-e204-453e-9fb5-88cf932cfe80.webp)
 
 ### 1. 拦截器逻辑编写
 
@@ -127,7 +127,7 @@ CREATE TABLE `commodity` (
 
 ```
 
-![](https://imgkr.cn-bj.ufileos.com/4047f170-8eb8-4dce-8f4d-6939ebe86400.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795169-1ed96e98-f807-458f-a324-dd8a29143ac6.webp)
 
 ### 3. 编写业务逻辑
 
@@ -333,28 +333,28 @@ export class CommodityController {
 ### 4. 验证
 
 这是之前注册的用户表，在没有修改权限的情况下，角色 `role` 都是 `3`：
-![](https://imgkr.cn-bj.ufileos.com/0b8b0d41-5d9d-4650-8dc1-2384103d08c8.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795306-a9904eb2-e1f6-4aaa-84eb-919e2d98d4af.webp)
 先往商品表插入一些数据：
-![](https://imgkr.cn-bj.ufileos.com/20da72c6-9278-469c-b347-4a1696e00a5f.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795354-81463b00-2f2e-4282-97f6-a01f4ac42ff1.webp)
 我将使用 `nodejs` 用户登录，并请求查询接口：
-![](https://imgkr.cn-bj.ufileos.com/bac5c8fc-3922-4159-8191-738f0890ec8a.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795322-4905b86b-8fe4-4ea8-84f2-23797ed90883.webp)
 上图的查询结果，也符合预期，共有 2 条商品名称含有关键字 `德玛`。
 接下来，我们新建商品（英雄）：
-![](https://imgkr.cn-bj.ufileos.com/0e9079f8-5a29-425b-b434-757b5ea87861.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795553-f827336a-5c1a-45ea-813f-59867267bca8.webp)
 上图可以看到，因为权限不足，所以被拦截了。
 我们直接去数据库修改角色 role 字段，将 `3（普通用户）` 改为 `2（开发&测试&运营）`：
-![](https://imgkr.cn-bj.ufileos.com/91a7eb66-de28-488f-954a-15fc6f780a28.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795347-49b68fd2-6fd4-44a8-8cba-5ad76de51dce.webp)
 然后，**重新登录，重新登录，重新登录，重要的事情说 3 遍**，再请求：
-![](https://imgkr.cn-bj.ufileos.com/1b63e853-7e92-47da-b1fb-2824a2e56bcc.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795843-ac23ee51-d753-4937-8140-afd1706e56d2.webp)
 返回成功信息，再看看数据库：
-![](https://imgkr.cn-bj.ufileos.com/0aff62d5-9b6e-4398-9fad-bf1c6d652848.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795401-68dcb551-cc5a-4e60-afcb-5993f8489148.webp)
 如图，创建商品功能测试成功。
 但是，“麦林炮手”的价格应该是 1350，我们修改一下价格：
-![](https://imgkr.cn-bj.ufileos.com/fa6c2021-13aa-4f7a-9173-8c8f105aed8b.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795245-85277fbf-51b4-49e0-a338-e00d9324ddff.webp)
 再看看数据库，通过 `u_by` 字段可以知道是通过接口修改的：
-![](https://imgkr.cn-bj.ufileos.com/38c0b681-55ff-489f-ab63-ac75ab05a88b.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795170-e67298a7-8ae5-465f-9932-addd4887aa35.webp)
 现在问题来了，因为麦林炮手的介绍不太“和谐”，所以需要删除，于是我们请求一下删除接口：
-![](https://imgkr.cn-bj.ufileos.com/6424e0d5-fa51-45f9-994f-fb42a2797c29.webp)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795351-8951a956-e246-4b19-9be0-8bea28ef183d.webp)
 返回“无权操作”，只好提升角色，或者联系管理员帮忙删除啦，剩下的事情和之前的一样，不再赘述。
 
 ### 5. 优化
@@ -523,7 +523,7 @@ export class CommodityController {
 
 > 注意：RbacGuard 要在 AuthGuard 的上面，不然获取不到用户信息。
 > 请求一下只有管理员才有权限的删除操作：
-> ![](https://imgkr.cn-bj.ufileos.com/7887e855-e23d-4707-94ff-ddadad4f1c60.webp)
+> ![](https://static.tuture.co/c/@uXOOfFmhS/1589284795291-067c6b3f-2e0c-46ba-8622-9cc5237b24c2.webp)
 > 涛声依旧。
 
 ## 总结
@@ -532,7 +532,7 @@ export class CommodityController {
 然而这种设计，要求路由必须是一一对应的，遇到复杂的用户关系，还需要再建 3 张表，一张是 `权限` 表，一张是 `用户-权限` 对应表，还有一张是 `路由-权限` 对应表，这样基本能覆盖 RBAC 2 以上的需求了。
 但万变不离其宗，基本就是在拦截器或守卫里做文章，用户登录后，将权限列表缓存起来（可以是 Redis），这样就不用每次都查表去判断有没有权限访问路由了。
 下一篇，暂时还不知道要介绍什么，清明节前事有点多，可能是使用 Swagger 自动生成接口文档吧。
-![](https://imgkr.cn-bj.ufileos.com/231ba6cf-7ca2-4135-a090-aacea2652be3.gif)
+![](https://static.tuture.co/c/@uXOOfFmhS/1589284795242-b502bf8e-5650-41b3-97c7-1928e63efa09.gif)
 
 > 本篇收录于[NestJS 实战教程](https://juejin.im/collection/5e893a1b6fb9a04d65a15400)，更多文章敬请关注。
 
