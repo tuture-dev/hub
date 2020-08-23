@@ -68,6 +68,10 @@
     {
       "name": "koa-quickstart",
       "git": "https://github.com/tuture-dev/koa-quickstart.git"
+    },
+    {
+      "name": "javascript-test-series",
+      "git": "https://github.com/tuture-dev/javascript-test-series.git"
     }
   ]
 }
