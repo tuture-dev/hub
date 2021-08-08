@@ -20,6 +20,7 @@ jobs:
       - uses: actions/checkout@v1
         with:
           ref: production
+          submodules: true
 
       - name: Setup node environment
         uses: actions/setup-node@v1
