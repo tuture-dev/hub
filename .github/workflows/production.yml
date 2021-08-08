@@ -67,5 +67,5 @@ jobs:
           node script/movePublicToRoot.js
           git add .
           git commit -m "Automatic deploy (`date`)"
-          git remote add $REMOTE $GITHUB_REPO
+          git remote add $REMOTE $CODING_REPO
           git push -f -u $REMOTE $BRANCH_NAME
