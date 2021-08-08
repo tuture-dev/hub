@@ -17,7 +17,7 @@ jobs:
         run: |
           git config --global user.email "1043269994@qq.com"
           git config --global user.name pftom
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
         with:
           ref: production
           submodules: true
