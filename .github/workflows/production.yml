@@ -40,9 +40,9 @@ jobs:
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
 
-      - name: Install npm dependencies
-        run: |
-          yarn
+      - uses: sergioramos/yarn-actions/install@v6
+        with:
+          frozen-lockfile: true
 
       - name: Download repositories
         run: |
