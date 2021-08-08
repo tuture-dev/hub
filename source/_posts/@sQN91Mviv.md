@@ -5,7 +5,7 @@ tags: ['Nest.js']
 categories: ['后端', 'Node.js', '进阶']
 date: 2020-05-12T00:04:00.509Z
 photos:
-  - https://static.tuture.co/c/%40sQN91Mviv/5.jpg
+  - https://static.powerformer.com/c/%40sQN91Mviv/5.jpg
 ---
 
 <div class="profileBox">
@@ -188,21 +188,21 @@ export class RegisterInfoDTO {
 
 上面简单编写了一些常用的验证手段，`class-validator` 里面有非常多的验证方法，有兴趣的读者可以访问官方文档去学习：[GitHub: class-validator](https://github.com/typestack/class-validator)
 接下来我们测试一下，先测试为空的情况：
-![](https://static.tuture.co/c/@sQN91Mviv/1589284859007-8318b693-a8f9-4f08-85e7-cb443a924a53.webp)
+![](https://static.powerformer.com/c/@sQN91Mviv/1589284859007-8318b693-a8f9-4f08-85e7-cb443a924a53.webp)
 上图可以看到 `accountName` 的 `@IsNotEmpty()` 已经生效了
 
 > 注意：class-validator 还提供了一个方法叫 @IsEmpty()，这是表示参数必须为空，不要搞混了。
 > 再测试参数类型，因为 Postman 的 `Body \-> x-www-form-urlencoded` 默认传的都是字符串，所以我们需要稍微修改一下请求参数：
-> ![](https://static.tuture.co/c/@sQN91Mviv/1589284859083-1d5dae75-95cf-4f31-9084-4fa19b9f20b1.webp)
+> ![](https://static.powerformer.com/c/@sQN91Mviv/1589284859083-1d5dae75-95cf-4f31-9084-4fa19b9f20b1.webp)
 > 上图可以看到 `realname` 的 `@IsString()` 已经生效了，再看一下日志：
-> ![](https://static.tuture.co/c/@sQN91Mviv/1589284859038-9ea28f71-caa8-423b-adf0-87d72797f697.webp)
+> ![](https://static.powerformer.com/c/@sQN91Mviv/1589284859038-9ea28f71-caa8-423b-adf0-87d72797f697.webp)
 > 至此，入参验证功能已基本完成，有了这些，我们就可以摆脱各种 if - else 来验证入参了（当然，特殊的，逻辑比较复杂的还是需要的）。
 
 ## 总结
 
 本篇介绍了如何定义 DTO，如何使用 Pipes 管道，以及如何配合 class-validator 进行入参验证。
 定义 DTO 有人可能会觉得好麻烦，直接 any 一把梭不就好了，然后 TypeScript 就逐渐变成了 AnyScript 了。。。。
-![](https://static.tuture.co/c/@sQN91Mviv/1710abf3c25dc456)
+![](https://static.powerformer.com/c/@sQN91Mviv/1710abf3c25dc456)
 但如果不拥抱 TypeScript 的特性，那还不如直接用 JavaScript 来写，这样还更快（如 Koa、Egg 等），定义 DTO 还有一个好处，那就是可以配合 Swagger 自动生成文档，并且是可请求的，极大方便了前端阅读文档，以后的教程会说明如何操作。
 下一篇，将介绍一下如何使用拦截器进行权限认证。
 

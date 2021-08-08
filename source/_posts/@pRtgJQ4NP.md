@@ -5,7 +5,7 @@ tags: ['Nest.js']
 categories: ['后端', 'Node.js', '进阶']
 date: 2020-05-12T00:00:00.509Z
 photos:
-  - https://static.tuture.co/c/%40pRtgJQ4NP/1.jpg
+  - https://static.powerformer.com/c/%40pRtgJQ4NP/1.jpg
 ---
 
 <div class="profileBox">
@@ -30,7 +30,7 @@ Nest 是我近半年接触的一款后端框架，之前接触的是 Koa2，但�
 
 Nest 采用 MVC 的设计模式，如果有 Angular 项目经验的读者，应该会觉得熟悉。我没写过 Angular，所以当初学的时候，走了一些弯路，主要是接受这种类 Spring 的设计理念。
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941205-0447a9b4-d46e-4187-acd2-515522ebf4c4.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941205-0447a9b4-d46e-4187-acd2-515522ebf4c4.webp)
 
 [GitHub 项目地址](https://github.com/SephirothKid/nest-zero-to-one)，欢迎各位大佬 Star。
 
@@ -55,21 +55,21 @@ $ nest new project-name
 
 输入完后，会初始化，此时，会问你使用哪一种方式来管理依赖包：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941213-1c828dcb-a482-47a2-803e-250553035951.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941213-1c828dcb-a482-47a2-803e-250553035951.webp)
 
 我选择的是 `yarn`，主要是国内的 `npm` 下载得比较慢。如果没有 `yarn` 的，可以下载一个，也可以使用 `npm`，不过本系列教程都使用 `yarn`。
 
 等鸡啄完了米，等狗舔完了面，等火烧断了锁，就会得到下列信息：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941177-16e5c85c-e295-4c6b-8141-55255de86585.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941177-16e5c85c-e295-4c6b-8141-55255de86585.webp)
 
 按照提示，进入项目，不出意外，目录应该是这个样子的：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941299-8aa004dd-9022-44d2-8fe5-90782bb198b6.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941299-8aa004dd-9022-44d2-8fe5-90782bb198b6.webp)
 
 运行 `yarn run start` 或 `yarn start`，会看到控制台输出如下信息，表示服务已启动：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941184-e9d3abf8-5539-4f1d-8454-bf59a2cb64aa.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941184-e9d3abf8-5539-4f1d-8454-bf59a2cb64aa.webp)
 
 ## 二、Hello World!
 
@@ -94,11 +94,11 @@ bootstrap();
 
 然后我们通过 Postman 访问本地的 3000 端口，会发现出现如下信息：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941186-a1cc681d-2860-45cb-af3c-e27c517115bd.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941186-a1cc681d-2860-45cb-af3c-e27c517115bd.webp)
 
 然后我们需要做的就是，找到为什么会出现 `Hello World!` 的原因。
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941214-5db88830-e7ff-4b39-8840-4ae9c02f7788.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941214-5db88830-e7ff-4b39-8840-4ae9c02f7788.webp)
 
 打开 `src` 下的 `app.service.ts`，会看到如下代码：
 
@@ -153,11 +153,11 @@ export class AppController {
 
 然后**重启项目**（在控制台按下 Ctrl + C 终止项目，然后再输入 `yarn start`），此时我们再访问 `localhost:3000/`，就会发现 `404` 了：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941286-57799cd3-4a7c-42e8-806c-dd83485cd651.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941286-57799cd3-4a7c-42e8-806c-dd83485cd651.webp)
 
 此时，我们输入 `localhost:3000/hello-world`，熟悉的字符出现了：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941227-1a94654c-ae24-4595-8442-780060fc07d3.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941227-1a94654c-ae24-4595-8442-780060fc07d3.webp)
 
 这就是 Nest 的路由，是不是很简单？
 
@@ -182,7 +182,7 @@ export class AppController {
 
 重启项目，此时我们访问 `localhost:3000/lesson-1/hello-world`，就会指向 `getHello()` 方法了：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941314-6cf571d4-956c-4685-af0e-6d0fc5d9ff64.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941314-6cf571d4-956c-4685-af0e-6d0fc5d9ff64.webp)
 
 ### 3. 全局路由前缀
 
@@ -203,7 +203,7 @@ bootstrap();
 
 之后只要请求服务，所有的路由都要加上 `nest-zero-to-one` 前缀：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941302-947921d2-c892-4e41-a6d5-536a7dcaf278.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941302-947921d2-c892-4e41-a6d5-536a7dcaf278.webp)
 
 ### 4. 使用 nodemon 模式启动项目
 
@@ -211,7 +211,7 @@ bootstrap();
 
 如果出现下列信息：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941335-387ff501-d620-44ea-b5a4-4a2c2eb5c3be.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941335-387ff501-d620-44ea-b5a4-4a2c2eb5c3be.webp)
 
 原因是可能之前装过 `typescript` 或者 `nestjs` 脚手架，然后新建项目的时候，`typescript` 版本比较旧，只需在项目中更新到 `3.7.0` 以上：
 
@@ -222,7 +222,7 @@ $ yarn add typescript -D
 
 出现这个截图，但是没有路由信息，表示 nodemon 的配置需要更改：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941444-ea20c995-b94d-4134-ab51-a61bfab39bca.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941444-ea20c995-b94d-4134-ab51-a61bfab39bca.webp)
 
 ```json
 package.json:
@@ -237,7 +237,7 @@ nodemon.json:
 
 然后再运行 `yarn start:dev` 就可以了：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941305-17499c0d-d56a-41ad-b625-f14121bf0255.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941305-17499c0d-d56a-41ad-b625-f14121bf0255.webp)
 
 或者干脆直接把 `main.ts` 扔到根目录去（和 src 同级）
 
@@ -275,7 +275,7 @@ $ nest g service user logical
 
 就会发现 src 目录下多了 logical/user/ 文件夹（个人喜欢将业务逻辑相关的文件放入 logical）
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941294-5fa97734-fb92-4106-be61-31d8bace9074.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941294-5fa97734-fb92-4106-be61-31d8bace9074.webp)
 
 上图中的 user.service.spec.ts 可以不用管……至少我写了大半年，也没动过这种文件。
 
@@ -346,11 +346,11 @@ export class UserController {
 
 我们用 Postman 来测试一下，先随意传入一个 username：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941424-594d16f1-1114-428a-b1ff-0ba317d6dcd2.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941424-594d16f1-1114-428a-b1ff-0ba317d6dcd2.webp)
 
 再传入 'Kid'：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941600-98827fc9-6c1f-4688-8c1d-6056bf5192e5.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941600-98827fc9-6c1f-4688-8c1d-6056bf5192e5.webp)
 
 由此可知，我们成功匹配到了路由，并且编写的业务生效了。
 
@@ -436,7 +436,7 @@ export class AppModule {}
 
 保存运行，发现路由依然生效：
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941341-98f69263-6f51-4b65-af50-fb718b8e91ad.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941341-98f69263-6f51-4b65-af50-fb718b8e91ad.webp)
 
 当然，Module 还有其他高级玩法，这个就不在这里展开了。
 
@@ -450,7 +450,7 @@ export class AppModule {}
 
 写惯了 JavaScript 的人，可能不是很能适应这种类型检查，尤其是热衷于使用各种骚操作的，不过既然涉及到了后端领域，还是严谨一点比较好，前期可以避免各种不规范导致的坑。
 
-![](https://static.tuture.co/c/@pRtgJQ4NP/1589284941305-95bca38a-486f-40ab-b140-96673f9c87b7.webp)
+![](https://static.powerformer.com/c/@pRtgJQ4NP/1589284941305-95bca38a-486f-40ab-b140-96673f9c87b7.webp)
 
 下一篇将介绍如何连接 MySQL 数据库。
 

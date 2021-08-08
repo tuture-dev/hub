@@ -32,6 +32,9 @@ function adjustContent(markdownPath, info) {
   // Replace tsx to ts.
   content = content.replace(/```tsx/g, '```ts');
 
+  // Replace static file cdn
+  content = content.replace(/static\.tuture\.co/g, 'static.powerformer.com');
+
   fs.writeFileSync(markdownPath, content);
 }
 
@@ -63,7 +66,8 @@ function buildTutorial(tuturePath) {
   cp.execSync('tuture reload && tuture build --hexo');
   console.log('Build complete.');
 
-  const collection = JSON.parse(fs.readFileSync(collectionPath).toString());
+  const str = fs.readFileSync(collectionPath).toString();
+  const collection = JSON.parse(str);
   const idDigits = Number(process.env.ID_DIGITS) || 7;
   const convertId = (id) => id.toString().slice(0, idDigits);
 

@@ -5,7 +5,7 @@ tags: ['Nest.js']
 categories: ['后端', 'Node.js', '进阶']
 date: 2020-05-12T00:01:00.509Z
 photos:
-  - https://static.tuture.co/c/%4034dvBzFh6/2.jpg
+  - https://static.powerformer.com/c/%4034dvBzFh6/2.jpg
 ---
 
 <div class="profileBox">
@@ -37,13 +37,13 @@ photos:
 
 用 Navicat 连接上数据库后，新建一个库：
 
-![](https://static.tuture.co/c/@34dvBzFh6/1589285098161-92c7982f-c049-484e-92d7-9e7afaa428af.webp)
+![](https://static.powerformer.com/c/@34dvBzFh6/1589285098161-92c7982f-c049-484e-92d7-9e7afaa428af.webp)
 
-![](https://static.tuture.co/c/@34dvBzFh6/1589285098122-8c279728-bb7a-47d7-b8dc-d55d8125428c.webp)
+![](https://static.powerformer.com/c/@34dvBzFh6/1589285098122-8c279728-bb7a-47d7-b8dc-d55d8125428c.webp)
 
 点开我们刚创建的库 `nest_zero_to_one`，点开 Tables，发现里面空空如也，接下来我们创建一张新表，点开上面工具栏的 Query，并新增查询：
 
-![](https://static.tuture.co/c/@34dvBzFh6/1589285098172-12a43b0f-2fa2-43ef-bd5f-b7dc6533719c.webp)
+![](https://static.powerformer.com/c/@34dvBzFh6/1589285098172-12a43b0f-2fa2-43ef-bd5f-b7dc6533719c.webp)
 
 将下列代码复制到框内，点击上面的运行，即可完成表的创建：
 
@@ -67,15 +67,15 @@ CREATE TABLE `admin_user` (
 
 ```
 
-![](https://static.tuture.co/c/@34dvBzFh6/1589285098152-6320a371-9605-4c10-93fe-48e75fadc3c4.webp)
+![](https://static.powerformer.com/c/@34dvBzFh6/1589285098152-6320a371-9605-4c10-93fe-48e75fadc3c4.webp)
 
 然后我们可以看到，左边的 `Tables` 下多出了 `admin_user` 表，点开就可以看到字段信息了：
 
-![](https://static.tuture.co/c/@34dvBzFh6/1589285098129-ee898154-d572-40ba-a8cf-8edb1a97bd84.webp)
+![](https://static.powerformer.com/c/@34dvBzFh6/1589285098129-ee898154-d572-40ba-a8cf-8edb1a97bd84.webp)
 
 我们先随便插入 2 条数据，方便后面的查询：
 
-![](https://static.tuture.co/c/@34dvBzFh6/1589285098117-4a0baa06-3231-48b5-b572-b512622a86af.webp)
+![](https://static.powerformer.com/c/@34dvBzFh6/1589285098117-4a0baa06-3231-48b5-b572-b512622a86af.webp)
 
 ## 二、项目的数据库配置
 
@@ -222,21 +222,21 @@ export class UserService {
 
 保存文件，就会看到控制台刷新了（前提是使用 `yarn start:dev` 启动的），并打印下列语句：
 
-![](https://static.tuture.co/c/@34dvBzFh6/1589285098163-689735e7-c9b3-4cc5-a869-68776586be52.webp)
+![](https://static.powerformer.com/c/@34dvBzFh6/1589285098163-689735e7-c9b3-4cc5-a869-68776586be52.webp)
 
 这说明之前的配置生效了，我们试着用之前的参数请求一下接口：
 
-![](https://static.tuture.co/c/@34dvBzFh6/1589285098174-01e86f33-71bc-4334-ad3d-889ec0422bf2.webp)
+![](https://static.powerformer.com/c/@34dvBzFh6/1589285098174-01e86f33-71bc-4334-ad3d-889ec0422bf2.webp)
 
 返回“查无此人”，说明数据库没有叫“Kid”的用户。
 
 我们改成正确的已存在的用户名再试试：
 
-![](https://static.tuture.co/c/@34dvBzFh6/1589285098206-f0199b49-b37c-4772-b818-169c15b10787.webp)
+![](https://static.powerformer.com/c/@34dvBzFh6/1589285098206-f0199b49-b37c-4772-b818-169c15b10787.webp)
 
 然后观察一下控制台，我们的查询语句已经打印出来了，通过 `logging: true`，可以在调试 Bug 的时候，更清晰的查找 SQL 语句的错误，不过建议测试稳定后，上线前关闭，不然记录的日志会很繁杂：
 
-![](https://static.tuture.co/c/@34dvBzFh6/1589285098175-99c8dfba-b58d-4433-b30f-acb8470aba94.webp)
+![](https://static.powerformer.com/c/@34dvBzFh6/1589285098175-99c8dfba-b58d-4433-b30f-acb8470aba94.webp)
 
 再对照一下数据库里的表，发现查出来的数据和数据库里的一致，至此，MySQL 连接测试完成，以后就可以愉快的在 Service 里面搬砖了。
 
@@ -258,7 +258,7 @@ export class UserService {
 
 > 注意：在写 UPDATE 更新语句的时候，一定要加上 WHERE 条件，一定要加上 WHERE 条件，一定要加上 WHERE 条件，重要的事情说 3 遍，血与泪的教训！！！
 
-![](https://static.tuture.co/c/@34dvBzFh6/1589285098128-2b7c200c-935f-418e-8d46-f1f164453908.webp)
+![](https://static.powerformer.com/c/@34dvBzFh6/1589285098128-2b7c200c-935f-418e-8d46-f1f164453908.webp)
 
 下一篇，将介绍如何使用 JWT（Json Web Token）进行单点登录。
 

@@ -5,7 +5,7 @@ tags: ['Nest.js']
 categories: ['后端', 'Node.js', '进阶']
 date: 2020-05-12T00:03:00.509Z
 photos:
-  - https://static.tuture.co/c/%40auY0siFek/4.jpg
+  - https://static.powerformer.com/c/%40auY0siFek/4.jpg
 ---
 
 <div class="profileBox">
@@ -431,13 +431,13 @@ bootstrap();
 
 保存代码后，就会发现，项目目录下就多了几个文件：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157042-afbc04e0-11ba-4c3d-a086-641b3c32c9c3.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157042-afbc04e0-11ba-4c3d-a086-641b3c32c9c3.webp)
 
 这就是之前 `config/log4js.ts` 中配置的成果
 
 接下来，我们试着请求一下登录接口：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157040-5257b5aa-05cd-4ce6-8de7-c6aea6e7386b.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157040-5257b5aa-05cd-4ce6-8de7-c6aea6e7386b.webp)
 
 发现虽然是打印了，但是没有请求参数信息。
 
@@ -464,13 +464,13 @@ bootstrap();
 
 再请求一次，发现参数已经出来了：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157080-63d37742-b656-4bbb-be82-ea304a65c1f5.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157080-63d37742-b656-4bbb-be82-ea304a65c1f5.webp)
 
 > 上面的打印信息，IP 为 `::1` 是因为我所有的东西都跑在本地，正常情况下，会打印对方的 IP 的。
 
 再去看看 `logs/` 文件夹下：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157137-e9ee0369-e782-4da3-b800-fc8930976125.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157137-e9ee0369-e782-4da3-b800-fc8930976125.webp)
 
 上图可以看到日志已经写入文件了。
 
@@ -550,7 +550,7 @@ bootstrap();
 
 我们再试一次登录接口：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157093-2bf794c8-e2e0-495f-9006-b6d169f82cd3.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157093-2bf794c8-e2e0-495f-9006-b6d169f82cd3.webp)
 
 可以看到，出参的日志已经出来了，User 为 `undefiend` 是因为登录接口没有使用 JWT 守卫，若路由加了 `@UseGuards(AuthGuard('jwt'))`，则会把用户信息绑定在 req 上，具体操作可回顾上一篇教程。
 
@@ -558,19 +558,19 @@ bootstrap();
 
 在开发的过程中，难免会写出各式各样的“八阿哥”，不然程序员就要失业了。一个富有爱心的程序员应该在输出代码的同时创造出 3 个岗位（手动狗头）。
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157088-01a8d786-4349-4d17-98d4-e695137597da.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157088-01a8d786-4349-4d17-98d4-e695137597da.webp)
 
 回归正题，光有入参出参日志还不够，异常的捕获和抛出也需要记录。
 
 接下来，我们先故意写错语法，看看控制台打印什么：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157104-9c9abf15-a920-4902-ad19-ad4e0542fba3.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157104-9c9abf15-a920-4902-ad19-ad4e0542fba3.webp)
 
 如图，只会记录入参以及控制台默认的报错信息，而默认的报错信息，是不会写入日志文件的。
 
 再看看请求的返回数据：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157143-6ed21a70-a6c1-4b64-b5f0-617b7967c38a.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157143-6ed21a70-a6c1-4b64-b5f0-617b7967c38a.webp)
 
 如图，这里只会看到 "Internal server error"，其他什么信息都没有。
 
@@ -661,7 +661,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
 
 我们测试一下，先把注册接口的 Token 去掉，请求：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157219-f0d860ec-1079-4cec-b21e-9312997d6321.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157219-f0d860ec-1079-4cec-b21e-9312997d6321.webp)
 
 上图是还没有加过滤器的请求结果。
 
@@ -694,13 +694,13 @@ bootstrap();
 
 使用全局过滤器 `useGlobalFilters` 调用 `http-exception`，再请求：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157167-02c5c42b-fdbc-4f0b-95f2-122eed2286d6.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157167-02c5c42b-fdbc-4f0b-95f2-122eed2286d6.webp)
 
 再看控制台打印：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157354-7846170b-6604-4d74-926c-4a3432116fef.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157354-7846170b-6604-4d74-926c-4a3432116fef.webp)
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157307-0acccad1-c883-4333-a9da-ff1ccd9068e4.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157307-0acccad1-c883-4333-a9da-ff1ccd9068e4.webp)
 
 如此一来，就可以看到未带 Token 请求的结果了，具体信息的组装，可以根据个人喜好进行修改。
 
@@ -814,15 +814,15 @@ bootstrap();
 
 然后，我们带上 Token （为了跳过 401 报错）再请求一次：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157134-5556c85e-5a1f-4b60-87b6-656b2be6371c.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157134-5556c85e-5a1f-4b60-87b6-656b2be6371c.webp)
 
 再看看控制台：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157181-888f31ac-5d17-4eed-a9ab-7a738827dddf.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157181-888f31ac-5d17-4eed-a9ab-7a738827dddf.webp)
 
 已经有了明显的区别，再看看 errors.log，也写进了日志中：
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157193-23864e82-2367-4c69-b442-875f37c3f696.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157193-23864e82-2367-4c69-b442-875f37c3f696.webp)
 
 如此一来，代码中未捕获的错误也能从日志中查到了。
 
@@ -834,7 +834,7 @@ bootstrap();
 
 良好的日志管理能帮我们快速排查 Bug，减少加班，不做资本家的奴隶，把有限的精力投入到无限的可能上。
 
-![](https://static.tuture.co/c/@auY0siFek/1589285157185-3dfd97b5-3d03-420a-bade-5600424f1981.webp)
+![](https://static.powerformer.com/c/@auY0siFek/1589285157185-3dfd97b5-3d03-420a-bade-5600424f1981.webp)
 
 下一篇将介绍如何使用 DTO 对参数进行验证，解脱各种 if - else。
 

@@ -5,7 +5,7 @@ tags: ['Nest.js']
 categories: ['后端', 'Node.js', '进阶']
 date: 2020-05-12T00:02:00.509Z
 photos:
-  - https://static.tuture.co/c/%40sO4iOISav/3.jpg
+  - https://static.powerformer.com/c/%40sO4iOISav/3.jpg
 ---
 
 <div class="profileBox">
@@ -213,23 +213,23 @@ export class UserController {
 
 现在，我们使用 Postman 来测试一下，先故意输入不一样的密码和已存在的用户名：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020495-26e6018c-e8f6-4903-83ae-1fb07bfef758.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020495-26e6018c-e8f6-4903-83ae-1fb07bfef758.webp)
 
 如图，密码不一致的校验触发了。
 
 然后，我们把密码改成一致的：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020427-04cba9a1-45ee-4a63-8fb0-6baed5782322.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020427-04cba9a1-45ee-4a63-8fb0-6baed5782322.webp)
 
 如图，已有用户的校验触发了。
 
 然后，我们再输入正确的参数：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020425-8bf8d6f4-b378-4664-a377-8bb4bf4f59e6.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020425-8bf8d6f4-b378-4664-a377-8bb4bf4f59e6.webp)
 
 我们再去数据库看一下：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020828-503db24b-785c-4f3b-9092-d2ec20ba939f.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020828-503db24b-785c-4f3b-9092-d2ec20ba939f.webp)
 
 发现已经将信息插入表中了，而且密码也是加密后的，至此，注册功能已基本完成。
 
@@ -373,7 +373,7 @@ export class AuthService {
 
 此时保存文件，控制台会报错：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020424-b23efdd8-60bf-45cf-af7c-4828c0231b3f.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020424-b23efdd8-60bf-45cf-af7c-4828c0231b3f.webp)
 
 可以先不管，这是因为还没有把 JwtService 和 UserService 关联到 auth.module.ts 中。
 
@@ -501,15 +501,15 @@ export class UserController {
 
 此时保存文件，同样的报错又出现了：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020405-c16215e4-9b52-42c2-815c-9a5f7b5c898d.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020405-c16215e4-9b52-42c2-815c-9a5f7b5c898d.webp)
 
 这次我们先去 `user.module.ts` 将 `controllers` 注释掉：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020412-fdbb72bd-15cb-441b-bf12-05af43c05c5c.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020412-fdbb72bd-15cb-441b-bf12-05af43c05c5c.webp)
 
 此时看控制台，没有 User 相关的路由，我们需要去 `app.module.ts` 将 Controller 添加回去：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020471-874995cf-a15a-4715-b9ef-78a0ea0d2328.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020471-874995cf-a15a-4715-b9ef-78a0ea0d2328.webp)
 
 这么做是因为如果在 `user.module.ts` 中引入 `AuthService` 的话，就还要将其他的策略又引入一次，个人觉得很麻烦，就干脆直接用 app 来统一管理了。
 
@@ -517,17 +517,17 @@ export class UserController {
 
 前面列了一大堆代码，是时候检验效果了，我们就按照原来注册的信息，进行登录请求：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020419-4639eed7-8a53-4f0f-ab3e-8a43e05d80eb.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020419-4639eed7-8a53-4f0f-ab3e-8a43e05d80eb.webp)
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020435-c6ce0683-7c17-4f6b-a512-ac60c4a40b89.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020435-c6ce0683-7c17-4f6b-a512-ac60c4a40b89.webp)
 
 图中可以看到，已经返回了一长串 token 了，而且控制台也打印了登录的步骤和用户信息。前端拿到这个 token，就可以请求其他有守卫的接口了。
 
 接下来我们试试输错账号或密码的情况：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020438-96347679-4810-4ae6-bf4d-8514da969223.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020438-96347679-4810-4ae6-bf4d-8514da969223.webp)
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020463-bd779597-4077-4d1f-97a4-44e8a6197d34.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020463-bd779597-4077-4d1f-97a4-44e8a6197d34.webp)
 
 ## 五、守卫
 
@@ -562,21 +562,21 @@ export class UserController {
 
 然后，我们先来试试请求头没有带 token 的情况：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020438-ea800021-d536-4778-8b5d-244b24fb0334.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020438-ea800021-d536-4778-8b5d-244b24fb0334.webp)
 
 可以看到，返回 401 状态码，Unauthorized 表示未授权，也就是判断你没有登录。
 
 现在，我们试试带 Token 的情况，把登录拿到的 Token 复制到 Postman 的 Authorzation 里（选择 Bearer Token）：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020458-fe6b7c1a-8389-4f42-92c8-1eb2927fea18.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020458-fe6b7c1a-8389-4f42-92c8-1eb2927fea18.webp)
 
 然后再请求接口：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020435-1d0c3fc8-1900-42a5-a0b2-570007bb952d.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020435-1d0c3fc8-1900-42a5-a0b2-570007bb952d.webp)
 
 此时，已经可以正常访问了，再看看控制台打印的信息，步骤也正如代码中注释的那样：
 
-![](https://static.tuture.co/c/@sO4iOISav/1589285020490-5ed72be7-9f01-43de-896c-d81583c9dee6.webp)
+![](https://static.powerformer.com/c/@sO4iOISav/1589285020490-5ed72be7-9f01-43de-896c-d81583c9dee6.webp)
 
 至此，登录功能已基本完成。
 
