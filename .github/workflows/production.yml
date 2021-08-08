@@ -20,6 +20,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: production
+          persist-credentials: false
           submodules: true
 
       - name: Setup node environment
@@ -70,12 +71,9 @@ jobs:
           git commit -m "Automatic deploy (`date`)"
         env:
           BRANCH_NAME: gh-pages
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: Commit & Push changes
+        uses: actions-js/push@master
         with:
           github_token: ${{ secrets.CODING_TOKEN }}
-          branch: $BRANCH_NAME
+          branch: gh-pages
           repository: tuture-dev/tuture-dev.github.io
-        env:
-          CODING_REPO: ${{ secrets.CODING_REPO }}
-          BRANCH_NAME: gh-pages
