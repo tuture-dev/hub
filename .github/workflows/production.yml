@@ -68,9 +68,14 @@ jobs:
           node script/movePublicToRoot.js
           git add .
           git commit -m "Automatic deploy (`date`)"
-          git remote add $REMOTE $CODING_REPO
-          git push -f -u $REMOTE $BRANCH_NAME
         env:
-          REMOTE: github
           BRANCH_NAME: gh-pages
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: $BRANCH_NAME
+          repository: $CODING_REPO
+        env:
           CODING_REPO: ${{ secrets.CODING_REPO }}
+          BRANCH_NAME: gh-pages
